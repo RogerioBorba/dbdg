@@ -500,6 +500,8 @@ export class WMSCapabilities {
     }
      layerObjectsWithoutMetadata() {
         const layers =  this.layerObjects()
+        if (!layers)
+            return null
         const layerObjects =  layers.filter((layerObj) => {
            return !layerObj['MetadataURL']
         })
@@ -517,15 +519,19 @@ export class WMSCapabilities {
     }
     
 
-     lenLayerObjectsWithoutMetadata(){
+     lenLayerObjectsWithoutMetadata() {
         const layerObjects =  this.layerObjectsWithoutMetadata()
+        if (!layerObjects)
+            return null
         return  layerObjects.length
     }
 
      lenMetadataURL() {
         const metadados =  this.metadataURLObjects()
-        const arr =  metadados.filter(metadata => {return metadata} )
-        return arr.length
+        if (!metadados)
+            return null
+        //const arr =  metadados.filter(metadata => {return metadata} )
+        return metadados.length
     }
      layerCRSObjects() {
         const layers =  this.layerObjects()

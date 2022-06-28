@@ -1,12 +1,11 @@
 <script lang="ts">
-    
+    export let  brand = 'OGC Services'
     const hidden = 'hidden'
     const block = 'inline-flex'
     let show_mobile_menu = 'hidden'
     
     function btnMenuClicked()  {
         show_mobile_menu = (show_mobile_menu == hidden)?block: hidden
-
     }
 
 </script>
@@ -20,7 +19,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
             </a>
-            <span class="font-bold uppercase tracking-wider">WMS checker</span>
+            <span class="font-bold uppercase tracking-wider">{brand}</span>
         </div>
         <!--btn-->
         <button class="inline-flex p-2 text-white rounded hover:bg-blue-800 ml-auto md:hidden" on:click="{btnMenuClicked}">

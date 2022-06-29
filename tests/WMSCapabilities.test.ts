@@ -1,6 +1,6 @@
 import {WMSCapabilities} from '../src/OGC/WMS/WMSCapabilities'
 import { expect, it } from "vitest"
-import {bndesXML, ebXML, ideRSXML} from '../src/OGC/WMS/xml_capabilities'
+import {bndesXML, ebXML, ideRSXML, cnpm_embrapaXML} from '../src/OGC/WMS/xml_capabilities'
 import { textXml2Json } from '../src/OGC/xml2Json';
 let xmlJsonObject = textXml2Json(bndesXML)
 let wms_capabilities =  new WMSCapabilities(xmlJsonObject)
@@ -103,5 +103,50 @@ it('Check WMS Service Group IDE RS', () => {
     //expect(iders_wms_capabilities.serviceKeywords()).toBeNull()
     //expect(iders_wms_capabilities.serviceContactInformationOrganization()).toBeNull()
     //expect(iders_wms_capabilities.serviceContactInformationeMail()).toBe('')
+    
+})
+
+let cnpm_embrapa_xmlJsonObject = textXml2Json(cnpm_embrapaXML)
+let cnpm_embrapa_wms_capabilities =  new WMSCapabilities(cnpm_embrapa_xmlJsonObject)
+it('Check WMS Service Group', () => {
+    
+    expect(cnpm_embrapa_wms_capabilities.serviceName()).toBe('WMS')
+    expect(cnpm_embrapa_wms_capabilities.serviceTitle()).toBe('My GeoServer WMS')
+    expect(cnpm_embrapa_wms_capabilities.serviceAbstract()).toBe('\n')
+    expect(cnpm_embrapa_wms_capabilities.serviceKeywords()).toContain('WFS')
+    expect(cnpm_embrapa_wms_capabilities.serviceKeywords()).toContain('WMS')
+    expect(cnpm_embrapa_wms_capabilities.serviceContactInformationOrganization()).toBeUndefined()
+    expect(cnpm_embrapa_wms_capabilities.serviceContactInformationeMail()).toBeUndefined()
+})
+
+it('Check WMS Capability Group', () => {
+    expect(cnpm_embrapa_wms_capabilities.capabilityException()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.capabilityExceptionFormat()).toContain('XML')
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetCapabilitiesDCPTypeHTTPGet()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetCapabilitiesDCPTypeHTTPPost()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetFeatureInfoDCPTypeHTTPGet()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetFeatureInfoFormat()).toContain('text/xml')
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetFeatureInfoFormat()).toContain('text/html')
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetFeatureInfoFormat()).toContain('application/json')  
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetMap()).toBeTruthy()
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetMapFormat()).toContain('image/png')
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetMapFormat()).toContain('application/vnd.google-earth.kml+xml')
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetMapFormat()).toContain('text/html; subtype=openlayers')
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetMapDCPType()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetMapDCPTypeHTTPGet()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestGetMapDCPTypeHTTPPost()).toBeUndefined()
+    expect(cnpm_embrapa_wms_capabilities.capabilityRequestParentLayer()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.parentLayerName()).toBeNull()
+    expect(cnpm_embrapa_wms_capabilities.parentLayerTitle()).toBe('My GeoServer WMS')
+    expect(cnpm_embrapa_wms_capabilities.parentLayerAbstract()).toBe('This is a description of your Web Map Server.')
+    expect(cnpm_embrapa_wms_capabilities.parentLayerCRSs()).toContain('EPSG:3857')
+    expect(cnpm_embrapa_wms_capabilities.parentLayerCRSs()).toContain('EPSG:4326')
+    expect(cnpm_embrapa_wms_capabilities.parentLayerEXGeographicBoundingBoxWestBoundLongitude()).toBe('-73.6166666666667')
+    expect(cnpm_embrapa_wms_capabilities.parentLayerEXGeographicBoundingBoxEastBoundLongitude()).toBe('-34.7933347300137')
+    expect(cnpm_embrapa_wms_capabilities.parentLayerEXGeographicBoundingBoxSouthBoundLatitude()).toBe('-31.6536626963763')
+    expect(cnpm_embrapa_wms_capabilities.parentLayerEXGeographicBoundingBoxNorthBoundLatitude()).toBe('4.2')
+    expect(cnpm_embrapa_wms_capabilities.parentLayerBoundingBox()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.layerObjects()).toBeDefined()
+    expect(cnpm_embrapa_wms_capabilities.layerObjects()[0]).toBeDefined()
     
 })

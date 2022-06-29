@@ -5,3 +5,4 @@ export let leaflet = writable(null);
 export let map = writable(null);
 
 export let selectedLayers = writable([]);
+export let currentListWMSCapability = writable([]);

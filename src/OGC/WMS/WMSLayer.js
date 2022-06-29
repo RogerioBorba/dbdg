@@ -51,6 +51,7 @@ class Style {
     }
     
     objCapability(propertyName) {
+        
         let obj = this.styleObject[propertyName]
         const isEmpty = Object.keys(obj).length === 0;
         if (isEmpty)
@@ -71,7 +72,9 @@ class Style {
     }
 
     legendGraphic() {
-        return new LegendGraphic(this.styleObject['LegendURL'])
+        let lGraphic = new LegendGraphic(this.styleObject['LegendURL'])
+        console.log(lGraphic)
+        return lGraphic
     }
 }
 
@@ -112,7 +115,7 @@ export class WMSLayer {
         this.wmsLayerCapability = wmsLayerCapability
         this.sourceLayer = sourceLayer
         this.oid = oid?oid:Date.now()
-        
+        this.styles_ = null    
     }
     
     remove() {
@@ -139,7 +142,10 @@ export class WMSLayer {
     }
     
     keywords(){
-        let keywords = this.wmsLayerCapability['KeywordList']['Keyword']
+        let keywordList = this.wmsLayerCapability['KeywordList']
+        if (!keywordList)
+            return []
+        let keywords = keywordList['Keyword']
         if (keywords)
             return keywords.map(keyword => keyword['#text'] || keyword['cdata-section'] )
         return []
@@ -163,14 +169,33 @@ export class WMSLayer {
         return []
     }
     
-    style(){
-        return new Style(this.wmsLayerCapability['Style'])
+    styles(){
+        if (!this.styles_) {
+            let sty_arr = this.wmsLayerCapability['Style']
+            if (Array.isArray(sty_arr))
+                this.styles_ = sty_arr.map( st => new Style(st))
+            else
+                this.styles_ = [new Style(this.wmsLayerCapability['Style'])]
+        }
+            
+        return this.styles_
+    }
+    styleTitle() {
+        if (this.style())
+            return this.style().title()
     }
 
-    metadataURL() {
-        let metadataObj = this.wmsLayerCapability['MetadataURL']
-        if (metadataObj)
-            return new MetadataURL(metadataObj)
+    metadataURLs() {
+        let metadataObjs = this.wmsLayerCapability['MetadataURL']
+        console.log("metadataObj")
+        
+        if (metadataObjs) {
+            if (Array.isArray(metadataObjs))
+                return metadataObjs.map( metadataObj => new MetadataURL(metadataObj))
+            
+            return [new MetadataURL(metadataObjs)]
+        }
+            
         return null
     }
 }

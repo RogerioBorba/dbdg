@@ -1,11 +1,11 @@
 <script lang="ts">
     import { each } from 'svelte/internal';
-    import { textXml2Json} from './../OGC/xml2Json'
-    import Navbar from '../components/navbar.svelte'
-    import WMSLayerCard from '../OGC/WMS/WMSLayerCard.svelte'
-    import {catalogos_servicos} from './../OGC/CatalogoINDE'
-    import {WMSCapabilities} from './../OGC/WMS/WMSCapabilities'
-    import {WMSLayer} from '../OGC/WMS/WMSLayer'
+    import { textXml2Json} from '../../OGC/xml2Json'
+    import Navbar from '../../components/navbar.svelte'
+    import WMSLayerCard from '../../OGC/WMS/WMSLayerCard.svelte'
+    import {catalogos_servicos} from '../../OGC/CatalogoINDE'
+    import {WMSCapabilities} from '../../OGC/WMS/WMSCapabilities'
+    import {WMSLayer} from '../../OGC/WMS/WMSLayer'
     let selected = { id: 1, text: "Selecione um", iri: '' }
     let i = 1
     let idTextIRIArray = [selected ].concat(catalogos_servicos.map( (obj) =>  newObjIdTextIRI(obj)))
@@ -33,8 +33,10 @@
     async function wmsCapabilities(textXML) {
         wms_capabilities =  new WMSCapabilities(await textXml2Json(textXML))
         let layers = await wms_capabilities.layerObjects()
+        console.log(wms_capabilities)
         let i = 1
         wmsLayers = layers.map(layer => new WMSLayer(layer, i++, null))
+        //console.log(wmsLayers)
         return 1
     }
 

@@ -3043,3 +3043,346 @@ export const ideRSXML = `<WMS_Capabilities xmlns="http://www.opengis.net/wms" xm
 </Layer>
 </Capability>
 </WMS_Capabilities>`
+export const cnpm_embrapaXML = `<WMS_Capabilities version="1.3.0" updateSequence="644" xsi:schemaLocation="http://www.opengis.net/wms http://atlas.geoinfo.cnpm.embrapa.br/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+<Service>
+<Name>WMS</Name>
+<Title>My GeoServer WMS</Title>
+<Abstract>
+</Abstract>
+<KeywordList>
+<Keyword>WFS</Keyword>
+<Keyword>WMS</Keyword>
+<Keyword>GEOSERVER</Keyword>
+</KeywordList>
+<OnlineResource xlink:type="simple" xlink:href="http://geoserver.org"/>
+<ContactInformation>
+<ContactPersonPrimary>
+<ContactPerson/>
+<ContactOrganization/>
+</ContactPersonPrimary>
+<ContactPosition/>
+<ContactAddress>
+<AddressType/>
+<Address/>
+<City/>
+<StateOrProvince/>
+<PostCode/>
+<Country/>
+</ContactAddress>
+<ContactVoiceTelephone/>
+<ContactFacsimileTelephone/>
+<ContactElectronicMailAddress/>
+</ContactInformation>
+<Fees>NONE</Fees>
+<AccessConstraints>NONE</AccessConstraints>
+</Service>
+<Capability>
+<Request>
+<GetCapabilities>
+<Format>text/xml</Format>
+<DCPType>
+<HTTP>
+<Get>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows?SERVICE=WMS&"/>
+</Get>
+<Post>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows?SERVICE=WMS&"/>
+</Post>
+</HTTP>
+</DCPType>
+</GetCapabilities>
+<GetMap>
+<Format>image/png</Format>
+<Format>application/atom+xml</Format>
+<Format>application/pdf</Format>
+<Format>application/rss+xml</Format>
+<Format>application/vnd.google-earth.kml+xml</Format>
+<Format>
+application/vnd.google-earth.kml+xml;mode=networklink
+</Format>
+<Format>application/vnd.google-earth.kmz</Format>
+<Format>image/geotiff</Format>
+<Format>image/geotiff8</Format>
+<Format>image/gif</Format>
+<Format>image/jpeg</Format>
+<Format>image/png; mode=8bit</Format>
+<Format>image/svg+xml</Format>
+<Format>image/tiff</Format>
+<Format>image/tiff8</Format>
+<Format>text/html; subtype=openlayers</Format>
+<DCPType>
+<HTTP>
+<Get>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows?SERVICE=WMS&"/>
+</Get>
+</HTTP>
+</DCPType>
+</GetMap>
+<GetFeatureInfo>
+<Format>text/plain</Format>
+<Format>application/vnd.ogc.gml</Format>
+<Format>text/xml</Format>
+<Format>application/vnd.ogc.gml/3.1.1</Format>
+<Format>text/xml; subtype=gml/3.1.1</Format>
+<Format>text/html</Format>
+<Format>application/json</Format>
+<DCPType>
+<HTTP>
+<Get>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows?SERVICE=WMS&"/>
+</Get>
+</HTTP>
+</DCPType>
+</GetFeatureInfo>
+</Request>
+<Exception>
+<Format>XML</Format>
+<Format>INIMAGE</Format>
+<Format>BLANK</Format>
+</Exception>
+<Layer>
+<Title>My GeoServer WMS</Title>
+<Abstract>This is a description of your Web Map Server.</Abstract>
+<!--All supported EPSG projections:-->
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+<CRS>EPSG:3395</CRS>
+<CRS>EPSG:900913</CRS>
+<CRS>AUTO:42004</CRS>
+<CRS>EPSG:WGS84(DD)</CRS>
+<CRS>EPSG:42303</CRS>
+<CRS>CRS:84</CRS>
+<EX_GeographicBoundingBox>
+<westBoundLongitude>-73.6166666666667</westBoundLongitude>
+<eastBoundLongitude>-34.7933347300137</eastBoundLongitude>
+<southBoundLatitude>-31.6536626963763</southBoundLatitude>
+<northBoundLatitude>4.2</northBoundLatitude>
+</EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-73.6166666666667" miny="-31.6536626963763" maxx="-34.7933347300137" maxy="4.2"/>
+<Layer queryable="1" opaque="0">
+<Name>geonode:embrapa_completo</Name>
+<Title>
+Campo Experimental da Embrapa Caprinos e Ovinos no Ano de 2016
+</Title>
+<Abstract>
+Este mapa mostra os Campos Experimentais da Embrapa Caprinos e Ovinos na Fazenda Três Lagoas em Sobral -Ceará. Estas áreas são usadas para produzir alimentos para os rebanhos da Unidade. Ainda, estas áreas são usadas como forma de Transferência de Tecnologias, utilizando instrumentos como Dia de Campo, dentre outros.
+</Abstract>
+<KeywordList>
+</KeywordList>
+<CRS>EPSG:4326</CRS>
+<CRS>CRS:84</CRS>
+<EX_GeographicBoundingBox>
+</EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-40.3741226196289" miny="-3.78242659568787" maxx="-40.3247909545898" maxy="-3.73813819885254"/>
+<BoundingBox CRS="EPSG:4326" minx="-3.78242659568787" miny="-40.3741226196289" maxx="-3.73813819885254" maxy="-40.3247909545898"/>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.w3.org%2F2005%2FAtom&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=6012aa98-5c28-11e7-9311-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fgcmd.gsfc.nasa.gov%2FAboutus%2Fxml%2Fdif%2F&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=6012aa98-5c28-11e7-9311-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=6012aa98-5c28-11e7-9311-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=urn%3Aoasis%3Anames%3Atc%3Aebxml-regrep%3Axsd%3Arim%3A3.0&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=6012aa98-5c28-11e7-9311-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="FGDC">
+<Format>text/xml</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2Fcsdgm&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=6012aa98-5c28-11e7-9311-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=6012aa98-5c28-11e7-9311-0200c0a80a3c"/>
+</MetadataURL>
+<Style>
+<Name>embrapa_completo</Name>
+<Title>embrapa_completo</Title>
+<LegendURL width="22" height="40">
+<Format>image/png</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=geonode%3Aembrapa_completo"/>
+</LegendURL>
+</Style>
+</Layer>
+<Layer queryable="1" opaque="0">
+<Name>
+geonode:idaf_ac_totbov_0001a0010_cabsporprop_2475ptos
+</Name>
+<Title>
+Acre: 2475 propriedades com 1 até 10 cabeças de bovinos
+</Title>
+<Abstract>
+Fonte: Instituto de Defesa Agropecuária e Florestal do Acre - IDAF Acre. Mnemômico de arquivo: idaf_ac_totbov_0001a0010_cabsporprop_2475ptos
+</Abstract>
+<KeywordList>
+<Keyword>idaf_ac_totbov_0001a0010_cabsporprop_2475ptos</Keyword>
+<Keyword>features</Keyword>
+</KeywordList>
+<CRS>EPSG:4326</CRS>
+<CRS>CRS:84</CRS>
+<EX_GeographicBoundingBox>
+<westBoundLongitude>-73.6166666666667</westBoundLongitude>
+<eastBoundLongitude>-66.6652777777778</eastBoundLongitude>
+<southBoundLatitude>-11.1294444444444</southBoundLatitude>
+<northBoundLatitude>-7.37555555555555</northBoundLatitude>
+</EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-73.6166666666667" miny="-11.1294444444444" maxx="-66.6652777777778" maxy="-7.37555555555555"/>
+<BoundingBox CRS="EPSG:4326" minx="-11.1294444444444" miny="-73.6166666666667" maxx="-7.37555555555555" maxy="-66.6652777777778"/>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=2227415a-6859-11e9-baf3-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="FGDC">
+<Format>text/xml</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2Fcsdgm&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=2227415a-6859-11e9-baf3-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=urn%3Aoasis%3Anames%3Atc%3Aebxml-regrep%3Axsd%3Arim%3A3.0&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=2227415a-6859-11e9-baf3-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=2227415a-6859-11e9-baf3-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fgcmd.gsfc.nasa.gov%2FAboutus%2Fxml%2Fdif%2F&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=2227415a-6859-11e9-baf3-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.w3.org%2F2005%2FAtom&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=2227415a-6859-11e9-baf3-0200753f7c3c"/>
+</MetadataURL>
+<Style>
+<Name>idaf_ac_totbov_0001a0010_cabsporprop_2475ptos</Name>
+<Title>idaf_ac_totbov_0001a0010_cabsporprop_2475ptos</Title>
+<LegendURL width="20" height="20">
+<Format>image/png</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=geonode%3Aidaf_ac_totbov_0001a0010_cabsporprop_2475ptos"/>
+</LegendURL>
+</Style>
+</Layer>
+<Layer queryable="1" opaque="0">
+<Name>geonode:municipios_tabela</Name>
+<Title>Parceiros da Embrapa Caprinos e Ovinos em 2016.</Title>
+<Abstract>
+Cartografia das parcerias formalizadas da Embrapa Caprinos e Ovinos no ano de 2016.
+</Abstract>
+<KeywordList>
+<Keyword>Transferência de tecnologias</Keyword>
+</KeywordList>
+<CRS>EPSG:4326</CRS>
+<CRS>CRS:84</CRS>
+<EX_GeographicBoundingBox>
+<westBoundLongitude>-56.6671890822103</westBoundLongitude>
+<eastBoundLongitude>-34.7933347300137</eastBoundLongitude>
+<southBoundLatitude>-31.6536626963763</southBoundLatitude>
+<northBoundLatitude>-2.62647106338881</northBoundLatitude>
+</EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-56.6671890822103" miny="-31.6536626963763" maxx="-34.7933347300137" maxy="-2.62647106338881"/>
+<BoundingBox CRS="EPSG:4326" minx="-31.6536626963763" miny="-56.6671890822103" maxx="-2.62647106338881" maxy="-34.7933347300137"/>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.w3.org%2F2005%2FAtom&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=4a7c47e8-5d09-11e7-b8c3-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fgcmd.gsfc.nasa.gov%2FAboutus%2Fxml%2Fdif%2F&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=4a7c47e8-5d09-11e7-b8c3-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=4a7c47e8-5d09-11e7-b8c3-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=urn%3Aoasis%3Anames%3Atc%3Aebxml-regrep%3Axsd%3Arim%3A3.0&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=4a7c47e8-5d09-11e7-b8c3-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="FGDC">
+<Format>text/xml</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2Fcsdgm&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=4a7c47e8-5d09-11e7-b8c3-0200c0a80a3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=4a7c47e8-5d09-11e7-b8c3-0200c0a80a3c"/>
+</MetadataURL>
+<Style>
+<Name>municipios_tabela</Name>
+<Title>municipios_tabela</Title>
+<LegendURL width="20" height="20">
+<Format>image/png</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=geonode%3Amunicipios_tabela"/>
+</LegendURL>
+</Style>
+</Layer>
+<Layer queryable="1" opaque="0">
+<Name>
+geonode:regioes_produtividade_arroz_brs_catiana_brasil_2022
+</Name>
+<Title>
+Caracterização Ambiental da Região Produtora de Arroz Irrigado Tropical no Brasil em 2022
+</Title>
+<Abstract>
+Plano de informação representando as regiões homogêneas de produtividade para a cultivar de arroz BRS Catiana. Com foco em identificar grupos ambientais homogêneos na região produtora de arroz irrigado tropical e caracterizar fatores limitantes a produtividade (fatores ambientais, temperatura, radiação global acumulada, manejo e datas de semeadura). O modelo de simulação da produtividade, desenvolvimento e crescimento da cultura do arroz (ORIZAV3) foi parametrizado e validado para simular a performance das cultivares BRS Catiana. Os dados utilizados na parametrização e validação do modelo são provenientes do programa de melhoramento do arroz irrigado da Embrapa. O modelo de simulação da cultura do arroz foi aplicado para simular a produtividade das cultivares BRS Catiana na região tropical.
+</Abstract>
+<KeywordList>
+<Keyword>features</Keyword>
+<Keyword>
+regioes_produtividade_arroz_brs_catiana_brasil_2022
+</Keyword>
+</KeywordList>
+<CRS>EPSG:4326</CRS>
+<CRS>CRS:84</CRS>
+<EX_GeographicBoundingBox>
+<westBoundLongitude>-60.1</westBoundLongitude>
+<eastBoundLongitude>-36.47</eastBoundLongitude>
+<southBoundLatitude>-23.1</southBoundLatitude>
+<northBoundLatitude>4.2</northBoundLatitude>
+</EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-60.1" miny="-23.1" maxx="-36.47" maxy="4.2"/>
+<BoundingBox CRS="EPSG:4326" minx="-23.1" miny="-60.1" maxx="4.2" maxy="-36.47"/>
+<Attribution>
+<Title>[<Profile: embrapa>]</Title>
+</Attribution>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=5f584554-e1c0-11ec-aec5-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="FGDC">
+<Format>text/xml</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2Fcsdgm&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=5f584554-e1c0-11ec-aec5-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=urn%3Aoasis%3Anames%3Atc%3Aebxml-regrep%3Axsd%3Arim%3A3.0&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=5f584554-e1c0-11ec-aec5-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=5f584554-e1c0-11ec-aec5-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fgcmd.gsfc.nasa.gov%2FAboutus%2Fxml%2Fdif%2F&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=5f584554-e1c0-11ec-aec5-0200753f7c3c"/>
+</MetadataURL>
+<MetadataURL type="other">
+<Format>other</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/catalogue/csw?outputschema=http%3A%2F%2Fwww.w3.org%2F2005%2FAtom&service=CSW&request=GetRecordById&version=2.0.2&elementsetname=full&id=5f584554-e1c0-11ec-aec5-0200753f7c3c"/>
+</MetadataURL>
+<Style>
+<Name>
+regioes_produtividade_arroz_brs_catiana_brasil_2022
+</Name>
+<Title>
+regioes_produtividade_arroz_brs_catiana_brasil_2022
+</Title>
+<LegendURL width="209" height="60">
+<Format>image/png</Format>
+<OnlineResource xlink:type="simple" xlink:href="http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image%2Fpng&width=20&height=20&layer=geonode%3Aregioes_produtividade_arroz_brs_catiana_brasil_2022"/>
+</LegendURL>
+</Style>
+</Layer>
+</Layer>
+</Capability>
+</WMS_Capabilities>`

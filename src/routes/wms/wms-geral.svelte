@@ -1,15 +1,15 @@
 <script lang="ts">
-    import {catalogos_servicos} from './../OGC/CatalogoINDE'
-    import Navbar from '../components/navbar.svelte'
-    import {getWMSCapabilitiesObject} from './../OGC/WMS/WMSCapabilitiesObject'
-    import WMSCapabilitiesCard from './../OGC/WMS/WMSCapabilitiesCard.svelte';
+    import {catalogos_servicos} from './../../OGC/CatalogoINDE'
+    import Navbar from '../../components/navbar.svelte'
+    import {getWMSCapabilitiesObject} from './../../OGC/WMS/WMSCapabilitiesObject'
+    import WMSCapabilitiesCard from './../../OGC/WMS/WMSCapabilitiesCard.svelte';
     let objIdTextIRICapabilitiesArray = []
     let selectedItems = []
-    let isSelectedAll = false
     let promise = null
     let qtdNo = 0
     let countNo = 0
     let qtdToTalCamadas = 0
+    let checked = false
     let i = 1
     let instituicaoText = ''
     let tempoRequisicao
@@ -19,9 +19,22 @@
     function newObjIdTextIRI(obj) {
         return { id: i++, text: obj.descricao, iri: obj.wmsGetCapabilities }
     }
-    $: {
-        if (isSelectedAll) 
+    
+    function isChecking() {
+        console.log(`valor: ${checked} `)
+        if (!checked) 
             selectedItems = [...objIdTextIRIArray]
+        else {
+            qtdNo = 0
+            countNo = 0
+            qtdToTalCamadas = 0
+            i = 1
+            selectedItems =[]
+        }
+        checked = !checked
+    }
+    $: {
+        
         qtdNo = selectedItems.length
         if (countNo >= 0 && qtdNo > 0 && countNo != qtdNo) {
             if (selectedItems[countNo])
@@ -55,10 +68,12 @@
 </script>
 <Navbar brand="OGC/WMS Checker"></Navbar>
 <form class="m-2">
-    <div class="flex items-center mb-1 text-sm font-medium text-gray-900 dark:text-gray-400">
+    <div class="flex items-center flex-col sm:flex-row mb-1 text-sm font-medium text-gray-900 dark:text-gray-400">
         <label for="instituicoes_multiple" class="mr-4">Escolha as instituições</label>
-        <input class="mr-2" type="checkbox" bind:checked={isSelectedAll}> 
-        <p class="mr-2">selecione todos</p>
+        <div>
+            <input class="mr-1" type="checkbox" {checked} on:click={isChecking}> 
+            <span class="mr-2">selecione todos</span>
+        </div>
         <button class="mr-4 focus:outline-none bg-grey-light hover:bg-grey  font-bold rounded inline-flex items-center hover:bg-gray-100" on:click|preventDefault={btnSearchClicked} title="Realizar requisição">
             <svg  class="text-indigo-500 fill-current border border-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" color='green' viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
         </button>

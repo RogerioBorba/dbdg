@@ -6,10 +6,13 @@
     let metadados = wmsLayer.metadataURLs()
     
     function stylesAsString() {
+        console.log(wmsLayer.styles())
+        if (!wmsLayer.styles())
+            return ''
         return wmsLayer.styles().map( st => st.title()).toString()
     }
     function keywordsString() {
-        return (wmsLayer.keywords().length > 0)? wmsLayer.keywords().toString(): 'Não há palavras chaves'
+        return (wmsLayer.keywords())? wmsLayer.keywords().toString(): 'Não há palavras chaves'
     }
     
 </script>

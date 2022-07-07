@@ -53,9 +53,11 @@ class Style {
     objCapability(propertyName) {
         
         let obj = this.styleObject[propertyName]
+        if (!obj)
+            return null
         const isEmpty = Object.keys(obj).length === 0;
         if (isEmpty)
-            return ''
+            return null
         return obj['#text']
     }
 
@@ -144,11 +146,14 @@ export class WMSLayer {
     keywords(){
         let keywordList = this.wmsLayerCapability['KeywordList']
         if (!keywordList)
-            return []
+            return null
         let keywords = keywordList['Keyword']
         if (keywords)
-            return keywords.map(keyword => keyword['#text'] || keyword['cdata-section'] )
-        return []
+            if (Array.isArray(keywords))
+                return keywords.map(keyword => keyword['#text'] || keyword['cdata-section'] )
+            else
+                return keywords['#text'] || keywords['cdata-section']
+        return null
     }
     
     crss() {
@@ -174,15 +179,20 @@ export class WMSLayer {
             let sty_arr = this.wmsLayerCapability['Style']
             if (Array.isArray(sty_arr))
                 this.styles_ = sty_arr.map( st => new Style(st))
-            else
-                this.styles_ = [new Style(this.wmsLayerCapability['Style'])]
+            else {
+                let st = this.wmsLayerCapability['Style']
+                if (st)
+                    this.styles_ = [new Style(st)]
+            }
+                
         }
             
         return this.styles_
     }
     styleTitle() {
-        if (this.style())
+        if (this.style() && this.style().title())
             return this.style().title()
+        return ''
     }
 
     metadataURLs() {

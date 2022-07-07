@@ -449,7 +449,8 @@ export class WMSCapabilities {
         return  cl['BoundingBox']
         
     }
-     layerObjects() {
+    
+    layerObjects() {
         const cl =   this.capabilityRequestParentLayer()
         if (!cl)
             return null

@@ -1,5 +1,5 @@
 <script>
-    let width = 'w-1/4'
+    let width = 'w-1/3'
     let displayOpenNav = 'hidden'
     
     function closeNav() {
@@ -7,7 +7,7 @@
         displayOpenNav = 'block'
     }
     function openNav() {
-        width = 'w-1/4'
+        width = 'w-1/3'
         displayOpenNav = 'hidden'
     }
 

@@ -1,8 +1,8 @@
 <script>
-    import {map, currentBaseLayer, leaflet} from './../../store/store'
+    import {map, currentBaseLayer, leaflet} from '../../../store/store'
     
     import {osmTileLayer, googleStreetsTileLayer, googleHybridTileLayer, googleSatTileLayer, 
-        googleTerrainTileLayer, nullTileLayer} from '../../lib/baseTiles'
+        googleTerrainTileLayer, nullTileLayer} from '../../../gis/baseTiles'
     
     let camadaEscolhida = 'osm'
     const osm = 'osm'

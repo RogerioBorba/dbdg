@@ -30,6 +30,15 @@
             return 0 
         return  lenMetadadoLinks   
     }
+
+    function qtdCamadaSemPalavraChave() {
+        if (!wmsCapabilities)
+            return 0
+        let lenMetadadoLinks = wmsCapabilities.lenLayerObjectsWithoutKeyword()
+        if(!lenMetadadoLinks)
+            return 0 
+        return  lenMetadadoLinks   
+    }
     function linkClicked() {
         currentListWMSCapability.set(wmsCapabilities)
     }
@@ -41,6 +50,7 @@
         <h2> Tempo de requisição GetCapabilities: {tempoRequisicao} seg.</h2>
         <h2>Qtd de camadas: {qtdLayer}</h2>
         <h2> Qtd de camadas sem metadado associado: {qtdCamadaSemMetadadosAssociado()}</h2>
+        <h2> Qtd de camadas sem palavras chaves: {qtdCamadaSemPalavraChave()}</h2>
         <a class="text-green-600 font-semibold hover:bg-gray-300 hover:underline py-1 " href="\wms\wms-capabilities" on:click={linkClicked}>Mais detalhes</a>
         <!--<a class="text-xs text-blue-500 underline underline-offset-4 uppercase" href="{metadadoAssociado()}">{metadadoText}</a>-->
 </div>

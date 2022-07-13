@@ -1,5 +1,5 @@
 import {WMSCapabilities} from './WMSCapabilities'
-import {textXml2Json} from './../xml2Json'
+import {textXml2Json} from '../../xml_json/xml2Json'
 
 export async function getWMSCapabilitiesObject(objIdTextIRI) {
     try {
@@ -15,7 +15,7 @@ export async function getWMSCapabilitiesObject(objIdTextIRI) {
     } catch (error) {
         console.log('There has been a problem with your fetch operation in client browser: ' + error.message)
         try {
-            console.log('Fetch o server-proxy')
+            console.log('Try fetching on server-proxy')
             let res = await fetch(`/api/wms/?url=${objIdTextIRI.iri}`)
             if(res.ok) {
                 console.log('fetch ok')

@@ -1,10 +1,10 @@
-import {WMSCapabilities} from '../src/OGC/WMS/WMSCapabilities'
+import {WMSCapabilities} from '../src/lib/OGC/WMS/WMSCapabilities'
 import { expect, it } from "vitest"
-import {bndesXML, ebXML, ideRSXML, cnpm_embrapaXML} from '../src/OGC/WMS/xml_capabilities'
-import { textXml2Json } from '../src/OGC/xml2Json';
+import {bndesXML, ebXML, ideRSXML, cnpm_embrapaXML} from '../src/lib/OGC/WMS/xml_capabilities'
+import { textXml2Json } from '../src/lib/xml_json/xml2Json';
 let xmlJsonObject = textXml2Json(bndesXML)
 let wms_capabilities =  new WMSCapabilities(xmlJsonObject)
-it('Check WMS Service Group', () => {
+it('Check WMS Service Group BNDES', () => {
     
     expect(wms_capabilities.serviceName()).toBe('WMS')
     expect(wms_capabilities.serviceTitle()).toBe('GeoServer Web Map Service')
@@ -15,7 +15,8 @@ it('Check WMS Service Group', () => {
     expect(wms_capabilities.serviceContactInformationeMail()).toBe('dbdg@inde.gov.br')
 })
 
-it('Check WMS Capability Group', () => {
+it('Check WMS Capability Group BNDES', () => {
+    console.log(wms_capabilities['Capability'])
     expect(wms_capabilities.capabilityException()).toBeDefined()
     expect(wms_capabilities.capabilityExceptionFormat()).toContain('XML')
     expect(wms_capabilities.capabilityExceptionFormat()).toContain('JSON')
@@ -45,6 +46,8 @@ it('Check WMS Capability Group', () => {
     expect(wms_capabilities.parentLayerEXGeographicBoundingBoxNorthBoundLatitude()).toBe('32.72')
     expect(wms_capabilities.parentLayerBoundingBox()).toBeDefined()
     expect(wms_capabilities.layerObjects()).toBeDefined()
+    expect(wms_capabilities.layerObjects()).toBeDefined()  
+    expect(wms_capabilities.allKeywords()).includes('AP_2009')
     
 })
 //console.log(wms_capabilities.layerObjects())
@@ -89,6 +92,7 @@ it('Check WMS Capability Group DSG', () => {
     expect(eb_wms_capabilities.parentLayerEXGeographicBoundingBoxNorthBoundLatitude()).toBe('42.5')
     expect(eb_wms_capabilities.parentLayerBoundingBox()).toBeUndefined()
     expect(eb_wms_capabilities.layerObjects()).toBeDefined()    
+    expect(eb_wms_capabilities.allKeywords()).toBeDefined()
 })
 
 const iders_xmlJsonObject = textXml2Json(ideRSXML)
@@ -147,6 +151,8 @@ it('Check WMS Capability Group', () => {
     expect(cnpm_embrapa_wms_capabilities.parentLayerEXGeographicBoundingBoxNorthBoundLatitude()).toBe('4.2')
     expect(cnpm_embrapa_wms_capabilities.parentLayerBoundingBox()).toBeDefined()
     expect(cnpm_embrapa_wms_capabilities.layerObjects()).toBeDefined()
-    expect(cnpm_embrapa_wms_capabilities.layerObjects()[0]).toBeDefined()
-    
+    expect(cnpm_embrapa_wms_capabilities.layerObjects()[0]).toBeDefined()    
+    expect(cnpm_embrapa_wms_capabilities.allKeywords()).includes('idaf_ac_totbov_0001a0010_cabsporprop_2475ptos')
+    expect(cnpm_embrapa_wms_capabilities.allKeywords()).includes('features')
+    console.log(cnpm_embrapa_wms_capabilities.allKeywords())
 })

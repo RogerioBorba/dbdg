@@ -1,13 +1,12 @@
 <script>
-    import Sidebar from "../components/Sidebar.svelte";
-    import Leaflet from "../components/leaflet.svelte";
-    import ExpansionPanel from "../components/ExpansionPanel.svelte";
-    import BaseTiles from '../components/base_tile_layer/BaseTiles.svelte';
-    import BaseWMS from "../OGC/WMS/BaseWMS.svelte";
-	//import BaseCSW from '../OGC/CSW/BaseCSW.svelte'
-    import BaseSelectedLayer from '../components/selected_layer/BaseSelectedLayer.svelte'
-    import SearchCSW from '../OGC/CSW/SearchCSW.svelte'
-	import Collapsible from '../components/Collapsible.svelte'
+    import Sidebar from "../lib/components/base/Sidebar.svelte";
+    import Leaflet from "../lib/components/leaflet/leaflet.svelte";
+    import ExpansionPanel from "../lib/components/base/ExpansionPanel.svelte";
+    import BaseTiles from '../lib/components/base/base_tile_layer/BaseTiles.svelte';
+   // import BaseWMS from "../lib/ogc/wms/BaseWMS.svelte";
+   import TabWMS from '$lib/ogc/wms/TabWMS.svelte'
+	import BaseSelectedLayer from '../lib/components/base/selected_layer/BaseSelectedLayer.svelte'
+    
 </script>
 <Leaflet></Leaflet>
 <Sidebar>
@@ -28,7 +27,7 @@
 		  </svg>
 		</span>
 		<span slot='content'>
-			<BaseWMS/>
+			<TabWMS/>
 		</span>
 	</ExpansionPanel>
 	<ExpansionPanel header={"CSW - buscar camadas nos metadados"}>

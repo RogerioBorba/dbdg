@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { textXml2Json} from './../xml2Json.js'
+    import { textXml2Json} from '../../xml_json/xml2Json.jss
     let arr_name_url = []
     let selected = { id: 1, text: "Selecione um", iri: '' }
 	let i = 1

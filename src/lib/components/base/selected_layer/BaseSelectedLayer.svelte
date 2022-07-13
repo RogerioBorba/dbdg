@@ -1,5 +1,5 @@
 <script>
- import {selectedLayers}  from './../../store/store'
+ import {selectedLayers}  from '../../../store/store'
  import SelectedLayer from './SelectedLayer.svelte'
     
 </script>

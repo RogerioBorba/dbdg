@@ -1,7 +1,7 @@
 <script lang="ts">
-    import {currentListWMSCapability} from './../../store/store'
-    import WMSLayerCard from './../../OGC/WMS/WMSLayerCard.svelte'
-    import {WMSLayer} from './../../OGC/WMS/WMSLayer'
+    import {currentListWMSCapability} from './../../lib/store/store'
+    import WMSLayerCard from './../../lib/ogc/wms/WMSLayerCard.svelte'
+    import {WMSLayer} from './../../lib/ogc/wms/WMSLayer'
     import { onMount } from 'svelte';
     let wmsLayers = []
     let textEntered = null
@@ -64,6 +64,10 @@
     <div>
         <input type="checkbox" bind:checked={nameEqualTitleChecked}>
         <span class="mr-5">Nome igual ao título</span>
+    </div>
+    <div>
+        <p>Qtd : {filteredWMSLayers.length}</p>
+        
     </div>
 </div>
 <div class = "m-2 grid gap-2 md:grid-cols-3 grid-cols-1">

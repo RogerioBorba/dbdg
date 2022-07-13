@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
-  	import {map, currentBaseLayer} from '../store/store'
-    import {osmTileLayer} from '../lib/baseTiles'
+  	import {map, currentBaseLayer} from '../../store/store'
+    import {osmTileLayer} from '../../gis/baseTiles'
   	import L from 'leaflet';
 	
    	onMount(() => {
@@ -10,7 +10,7 @@
 		link.rel = 'stylesheet';
 		link.href = 'https://unpkg.com/leaflet@1.8.0/dist/leaflet.css';
 		link.onload = () => {
-          map.set(L.map('map', { zoomControl: false }).setView({lon: -55, lat: -15}, 4));
+          map.set(L.map('map', { zoomControl: false }).setView({lon: -60, lat: -15}, 4));
           if(!$currentBaseLayer)
               currentBaseLayer.set(osmTileLayer)
           $currentBaseLayer.addTo($map);

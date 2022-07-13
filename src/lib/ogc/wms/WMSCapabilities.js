@@ -7,6 +7,7 @@ WMS_Capabilities
         KeywordList
     Capability
 */
+import {WMSLayer} from './WMSLayer'
 
 export class WMSCapabilities {
     constructor(xmlObject) {
@@ -455,7 +456,9 @@ export class WMSCapabilities {
         if (!cl)
             return null
         let lays =  cl['Layer']
+        
         return lays
+        
     }
      lenLayerObjects() {
         const ls =  this.layerObjects()
@@ -463,6 +466,7 @@ export class WMSCapabilities {
             return 0
         return  Object.keys(ls).length
     }
+    
      layerObjectsBy(field_name, field_value) {
         let layers_objects =  this.lenLayerObjects()
         return  layers_objects.filter(
@@ -499,21 +503,55 @@ export class WMSCapabilities {
         })
         return metadataObjects
     }
-     layerObjectsWithoutMetadata() {
+    
+    layerObjectsWithoutMetadata() {
         const layers =  this.layerObjects()
         if (!layers)
             return null
+        
         const layerObjects =  layers.filter((layerObj) => {
            return !layerObj['MetadataURL']
         })
         return layerObjects
     }
-     layerNamesWithoutMetadata() {
+    
+    allKeywords() {
+        const layers =  this.layerObjects()
+        let arr = []
+        if (!layers)
+            return []
+        const layerObjects =  layers.filter((layerObj) => {
+           return layerObj['KeywordList'] && layerObj['KeywordList']['Keyword'] 
+        })
+        
+        for(let i =0; i < layerObjects.length; i++) {
+            let innerArr = layerObjects[i]['KeywordList']['Keyword']
+            innerArr = Array.isArray(innerArr)?innerArr: [innerArr]
+            innerArr.forEach(element => {
+                arr.push(this.nodeValue(element))
+            });
+        }
+        return arr
+    }
+
+    layerObjectsWithoutKeyword() {
+        const layers =  this.layerObjects()
+        if (!layers)
+            return []
+        
+        const layerObjects =  layers.filter((layerObj) => {
+           return !layerObj['KeywordList']
+        })
+        return layerObjects
+    }
+
+    layerNamesWithoutMetadata() {
         const layerObjects =  this.layerObjectsWithoutMetadata()
         const arr_metadados =  layerObjects.map((layerObj) => { return layerObj['Name']})
         return arr_metadados.join(',')
     }
-     layerTitlesWithoutMetadata() {
+     
+    layerTitlesWithoutMetadata() {
         const layerObjects =  this.layerObjectsWithoutMetadata()
         const arr_metadados =  layerObjects.map((layerObj) => { return layerObj['Title']})
         return arr_metadados.join(',')
@@ -534,12 +572,42 @@ export class WMSCapabilities {
         //const arr =  metadados.filter(metadata => {return metadata} )
         return metadados.length
     }
-     layerCRSObjects() {
+
+    lenLayerObjectsWithoutKeyword() {
+        const layerObjs = this.layerObjectsWithoutKeyword()
+        if (!layerObjs)
+            return 0
+        return layerObjs.length
+    }
+
+    layerCRSObjects() {
         const layers =  this.layerObjects()
         const crsObjects =  layers.map((layerObj) => {
            return layerObj['CRS']
         })
         return crsObjects
+    }
+    
+    layerKeywordsObjects() {
+        const layers =  this.layerObjects()
+        let i = 1
+        const wmsLayers =  layers.map(layerObj => new WMSLayer(layerObj, i++, null))
+        let wmsLayersFiltered = wmsLayers.filter(wmsLayer => wmsLayer.keywords() != null && wmsLayer.keywords() != undefined )
+        let allKeywords = []
+        return allKeywords
+    }
+
+    wmsLayersFilteredByNameOrTitleOrKeyword(nameOrTitleOrKeyword, sourceLayer=null) {
+        let i = 1
+        let layers = this.layerObjects()
+        if (!layers)
+            return []
+        const wmsLayers =  layers.map(layerObj => new WMSLayer(layerObj, i++, sourceLayer))
+        return wmsLayers.filter(wmsLayer => 
+            (wmsLayer.title() && wmsLayer.title().toLowerCase().includes(nameOrTitleOrKeyword.toLowerCase())) ||
+            (wmsLayer.name() && wmsLayer.name().toLowerCase().includes(nameOrTitleOrKeyword.toLowerCase())) ||
+            (wmsLayer.keywords() &&
+              wmsLayer.keywords().toString().toLowerCase().includes(nameOrTitleOrKeyword.toLowerCase())))
     }
 }
 //module.exports=WMSCapabilities

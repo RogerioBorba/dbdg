@@ -1,8 +1,8 @@
 <script lang="ts">
-    import {catalogos_servicos} from './../../OGC/CatalogoINDE'
-    import Navbar from '../../components/navbar.svelte'
-    import {getWMSCapabilitiesObject} from './../../OGC/WMS/WMSCapabilitiesObject'
-    import WMSCapabilitiesCard from './../../OGC/WMS/WMSCapabilitiesCard.svelte';
+    import {catalogos_servicos} from '../../lib/inde/CatalogoINDE'
+    import Navbar from '../../lib/components/base/navbar.svelte'
+    import {getWMSCapabilitiesObject} from './../../lib/ogc/wms/WMSCapabilitiesObject'
+    import WMSCapabilitiesCard from './../../lib/ogc/wms/WMSCapabilitiesCard.svelte';
     let objIdTextIRICapabilitiesArray = []
     let selectedItems = []
     let promise = null
@@ -13,9 +13,18 @@
     let i = 1
     let instituicaoText = ''
     let tempoRequisicao
-    //let objIdTextIRIArray = [selected ].concat(catalogos_servicos.map( (obj) => newObjIdTextIRI(obj)))
+    let nameCatalog = ''
+    let adressCatalog =''
     let objIdTextIRIArray = catalogos_servicos.map( (obj) => newObjIdTextIRI(obj))
-    
+    let disableAddNewCatalog = true
+        
+    const addNewCatalog = () => {
+        let objIdTextIRI = {id: objIdTextIRIArray.length + 1, text: nameCatalog, iri: adressCatalog}
+        objIdTextIRIArray = [...objIdTextIRIArray, objIdTextIRI]
+        nameCatalog = ''
+        adressCatalog = ''
+    }
+
     function newObjIdTextIRI(obj) {
         return { id: i++, text: obj.descricao, iri: obj.wmsGetCapabilities }
     }
@@ -44,7 +53,9 @@
             
         }      
     }
-   
+    
+    $: disableButtonAddNewCatalog = !((nameCatalog.length != 0) && (adressCatalog.length != 0))
+
     async function btnSearchClicked() {
         if (selectedItems.length == 0)
             return alert( 'Escolha pelo menos uma instituição')
@@ -89,6 +100,11 @@
             </option>
         {/each}
     </select>
+    <div class="mt-2 w-full p1 flex flex-col md:flex-row">
+        <input class="border focus: outline-slate-400 w-full md:w-2/5 mr-1" type="text"  bind:value={nameCatalog} placeholder="Informe o nome do catálogo"> 
+        <input class="border focus: outline-slate-400 w-full md:w-2/5 mr-1" type="text"  bind:value={adressCatalog} placeholder="Informe o endereço WMS do GetCapabilities"> 
+        <button class=" md:w-1/5 shadow-sm rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 disabled:opacity-25" on:click|preventDefault={addNewCatalog} disabled={disableButtonAddNewCatalog}>Adicionar novo catálogo</button>
+    </div>
 </form>
 <div class = "m-2 grid gap-2 md:grid-cols-3 grid-cols-1">
      

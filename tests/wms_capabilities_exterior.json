@@ -1,0 +1,53 @@
+[
+    {
+    "descricao": "Servicio Web de Mapas (WMS) dos límites administrativos de Galicia",
+    "wmsGetCapabilities": "https://ideg.xunta.gal//servizos/services/Ordenacion/Paisaxe/MapServer/WMSServer?REQUEST=GetCapabilities&SERVICE=WMS&version=1.3.0"
+    },
+    {
+        "descricao": "REDIAM. WMS Serie de imágenes de satélite AQUA MODIS",
+        "wmsGetCapabilities": "https://www.juntadeandalucia.es/medioambiente/mapwms/REDIAM_aquamodis_cl_a_mensual_filtrada_2000_2017?service=WMS&request=GetCapabilities"
+    },
+    {
+        "descricao": "REDIAM. WMS Evaluación de la contaminación por elementos traza en la cuenca del río Guadiamar",
+        "wmsGetCapabilities":"https://www.juntadeandalucia.es/medioambiente/mapwms/REDIAM_aquamodis_cl_a_mensual_filtrada_2000_2017?service=WMS&request=GetCapabilities"
+    },
+    {
+        "descricao": "Cartografía Digital de Seguimiento del Parque Nacional de Doñana",
+        "wmsGetCapabilities":"http://venus.ebd.csic.es/cgi-bin/seguimiento/MiraMon5_0.cgi?request=GetCapabilities&service=WMS"
+    },
+    {
+        "descricao": "Servicio de visualización WMS de Seccionado Estadístico de España",
+        "wmsGetCapabilities":"https://servicios.ine.es/WMS/WMS_INE_SECCIONES_G01/MapServer/WMSServer?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
+    },
+    {
+        "descricao": "Información marina de referencia",
+        "wmsGetCapabilities":"http://barretosm.md.ieo.es/arcgis/services/wms/wmsBase/MapServer/WMSServer?request=GetCapabilities&service=WMS"
+    },
+    {
+        "descricao": "Mapas geológicos regionales - Mapa Geológico de Alicante a escala 1/200.000",
+        "wmsGetCapabilities":"http://barretosm.md.ieo.es/arcgis/services/wms/wmsBase/MapServer/WMSServer?request=GetCapabilities&service=WMS"
+    },
+    {
+        "descricao": "Catastro Inspire",
+        "wmsGetCapabilities":"http://barretosm.md.ieo.es/arcgis/services/wms/wmsBase/MapServer/WMSServer?request=GetCapabilities&service=WMS"
+    },
+    {
+        "descricao": "U.S. Geological Survey Mineral Resources Program",
+        "wmsGetCapabilities":"https://mrdata.usgs.gov/services/sgmc2?request=getcapabilities&service=WMS&version=1.3.0"
+    },
+    {
+        "descricao": "tigerweb.geo.census.gov",
+        "wmsGetCapabilities":"https://tigerweb.geo.census.gov/arcgis/services/TIGERweb/tigerWMS_Current/MapServer/WMSServer?request=GetCapabilities&service=WMS"
+    },
+    {
+        "descricao": "Plano de Pormenor da Margem Direita da Foz do Rio Jamor",
+        "wmsGetCapabilities":"http://servicos.dgterritorio.pt/sdisnitWMSPP6_1110_2673_1/wmservice.aspx?request=GetCapabilities&service=wms"
+    },
+    {
+        "descricao": "Hidrografia de Portugal Continental 1:200 000",
+        "wmsGetCapabilities":"http://ows.dgterritorio.pt/gateway/gateto/elf-tr-wms?service=WMS&REQUEST=GetCapabilities&VERSION=1.3.0"
+    }
+
+] 
+ 
+ 

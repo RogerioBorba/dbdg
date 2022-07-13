@@ -113,10 +113,11 @@ class LegendGraphic {
 }
 
 export class WMSLayer {
+    static inc = 0
     constructor(wmsLayerCapability, oid = null, sourceLayer = null) {
         this.wmsLayerCapability = wmsLayerCapability
         this.sourceLayer = sourceLayer
-        this.oid = oid?oid:Date.now()
+        this.oid = oid?oid:WMSLayer.inc++
         this.styles_ = null    
     }
     

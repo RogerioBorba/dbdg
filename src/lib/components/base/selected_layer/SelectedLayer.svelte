@@ -1,5 +1,5 @@
 <script>
-    import { selectedLayers } from './../../store/store'
+    import { selectedLayers } from '../../../store/store'
     export let layer;
   
     function btnClearClicked() {

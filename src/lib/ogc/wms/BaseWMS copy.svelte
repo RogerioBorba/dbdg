@@ -1,0 +1,112 @@
+<script>
+    import { onMount } from 'svelte'
+    import {WMSLayer} from './WMSLayer.js'
+    import { textXml2Json} from '../../xml_json/xml2Json.js'
+    import WMSCapabilityLayer from './WMSCapabilityLayer.svelte'
+    import {catalogos_servicos} from '../../inde/CatalogoINDE'
+    import { getWMSCapabilitiesObject } from './WMSCapabilitiesObject';
+    let arr_name_url = []
+    let promise = null
+    let selectedIDTextIRI = { id: 1, text: "Selecione um", iri: '' }
+	let i = 1
+    function newIRI(obj) {
+        return { id: i++, text: obj.descricao, iri: obj.wmsGetCapabilities }
+    }
+    let iriArray = [selectedIDTextIRI ].concat(catalogos_servicos.map( (obj) =>  newIRI(obj)))
+    let wmsLayers = []
+	let answer = '';
+    let textEntered = ""
+    let wmsLayersFiltered = []
+    $ : {
+            if (textEntered && textEntered.length >= 3) {
+                wmsLayersFiltered = wmsLayers.filter(
+                    wms_layer => wms_layer.title().toLowerCase().includes(textEntered.toLowerCase()))
+            }
+            else {
+                wmsLayersFiltered = [...wmsLayers]
+            }
+    }
+    
+    async function fetchListWMSLayer() {
+        //const res = await fetch(selected.iri);
+        let wms_capabilities =  await getWMSCapabilitiesObject(selectedIDTextIRI)
+        console.log(wms_capabilities)
+        let layers = wms_capabilities.layerObjects()
+        let i = 1
+        wmsLayers = layers.map(layer => new WMSLayer(layer, i++, null))
+        return 1
+    }
+
+    async function btnSearchClicked() {
+         if(!selectedIDTextIRI.iri) {
+            let msg = "Escolha o endereço (URL) ou informe um CSW Capabilities de uma instituição."
+            console.log(msg)
+            return 
+        }    
+        promise = fetchListWMSLayer()        
+    }
+
+    function btnClearClicked() {
+        selectedIDTextIRI = selectedIDTextIRI = { id: 1, text: "Selecione um", iri: '' }
+        promise = 1
+        wmsLayers = []
+        wmsLayersFiltered = []
+        textEntered = ""   
+    }
+
+	function handleSubmit() {
+		alert(`answered question ${selectedIDTextIRI.id} (${selectedIDTextIRI.text}) with "${answer}"`);
+	}
+
+    function onChange(value) {
+        console.log(value)
+        console.log(selectedIDTextIRI)
+    }
+
+    onMount(async () => {
+        try {
+            const res = await fetch('https://inde.gov.br/api/catalogo/get');
+		let j = await res.json();
+        console.log(j)    
+        } catch (error) {
+            alert(error.message)
+        }
+	});
+</script>
+
+<div class="pt-4 pb-2 text-lg text-justify font-sans md:font-serif">URLs de Entrada</div>
+<p class="text-justify text-blue-600 text-xs">Catálogos de serviços mais utilizados</p>
+<form class="relative" on:submit|preventDefault={handleSubmit}>
+	<select class="border-b-2 shadow-2xl w-full bg-gray-100 border-blue-500 focus:outline-none" bind:value={selectedIDTextIRI} on:change={onChange}>
+		{#each iriArray as iri}
+			<option value={iri}>
+				{iri.text}
+			</option>
+		{/each}
+	</select>
+    
+    <div class="flex mt-4 relative text-gray-700">
+        <input class="w-full h-8 pl-3 pr-8 text-base  border rounded-lg focus: outline-none" placeholder="URL WMS GetCapabilities" type="text" bind:value={selectedIDTextIRI.iri} title={selectedIDTextIRI.iri}>
+        <button class="focus:outline-none bg-grey-light hover:bg-grey text-grey-darkest font-bold py-1 px-1 rounded inline-flex items-center hover:bg-gray-100" on:click|preventDefault={btnSearchClicked} title="Buscar camadas">
+            <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        </button>
+        <button class="focus:outline-none bg-grey-light hover:bg-grey text-grey-darkest font-bold py-1 px-1 rounded inline-flex items-center hover:bg-gray-100" on:click|preventDefault={btnClearClicked} title="Limpar camadas">
+            <svg style="width:16px;height:16px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" />
+            </svg>  
+        </button>    
+    </div> 
+    {#await promise}
+        <p class = "text-xl text-center text-blue-600 animate-pulse">...aguarde</p>
+    {:then layers}
+        <input class="w-full h-8 pl-3 pr-8 text-base placeholder-gray-600 border rounded-lg focus: outline-none" hidden={wmsLayers.length == 0 ?true:false} type="text" placeholder="Digite para filtrar" bind:value={textEntered} title="Filtro">
+    {#each wmsLayersFiltered as layer}
+        <WMSCapabilityLayer wmsLayer={layer} capabilitiesUrl= {selectedIDTextIRI.iri}></WMSCapabilityLayer>
+    {/each}    
+    {:catch error}
+        <p class="text-red-500 text-xl ">{error.message}</p>
+    {/await} 
+</form>
+<style>
+	
+</style>

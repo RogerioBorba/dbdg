@@ -3,7 +3,7 @@
     import L from 'leaflet'
     import leafletWMS from 'leaflet.wms'
     
-    import { textXml2Json } from '../xml2Json';
+    import { textXml2Json } from '../../xml_json/xml2Json';
     export let wmsLayer;
     export let capabilitiesUrl;
     let source = null;

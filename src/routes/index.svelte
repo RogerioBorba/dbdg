@@ -5,7 +5,7 @@
     import BaseTiles from '../lib/components/base/base_tile_layer/BaseTiles.svelte';
    // import BaseWMS from "../lib/ogc/wms/BaseWMS.svelte";
    import TabWMS from '$lib/ogc/wms/TabWMS.svelte'
-	import BaseSelectedLayer from '../lib/components/base/selected_layer/BaseSelectedLayer.svelte'
+   import BaseSelectedLayer from '../lib/components/base/selected_layer/BaseSelectedLayer.svelte'
     
 </script>
 <Leaflet></Leaflet>

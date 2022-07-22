@@ -32,16 +32,32 @@ export async function getWMSCapabilitiesObject(objIdTextIRI) {
         }
     }
 }
-export async function fetchWMSCapabilitiesObject(objIdTextIRIArray) {
-    let objIdTextIRICapabilitiesArray = []
-    let objIdTextIRICapabilitiesFailedArray = []
+let count = 0
+export async function fetchAsWMSCapabilitiesObject(iri) {
 
-    for (const objIdTextIRI of objIdTextIRIArray) {
-        let res = await getWMSCapabilitiesObject(objIdTextIRI)
-        if (res)
-            objIdTextIRICapabilitiesArray.push({id: objIdTextIRI.id, text: objIdTextIRI.text, iri: objIdTextIRI.iri, capabilities: res})
-        else
-            objIdTextIRICapabilitiesFailedArray.push({id: objIdTextIRI.id, text: objIdTextIRI.text, iri: objIdTextIRI.iri, capabilities: null})
+    try {
+        
+        let res = await fetch(iri)
+        if(res.ok) {
+            let textXML = await res.text()
+            return new WMSCapabilities(await textXml2Json(textXML))
+            
+        } else {
+            console.log(`Client Error in fetching ${iri}`);
+            return null
+        }
+    } catch (error) {
+        console.log('There has been a problem with your fetch operation in client browser: ' + error.message)
+        try {
+            count++
+            if (count > 1)
+                return null
+            
+            return await fetchAsWMSCapabilitiesObject(iri)
+
+        } catch (error) {
+            console.log(`Error in fetching ${iri}`);
+            return null
+        }
     }
-    return [objIdTextIRICapabilitiesArray, objIdTextIRICapabilitiesFailedArray]
 }

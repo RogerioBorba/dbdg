@@ -1,7 +1,7 @@
 <script>
     import { fade } from 'svelte/transition'
     export let wmsLayer
-    export let capabilitiesUrl
+    //export let capabilitiesUrl
     let metadadoText = ""
     let metadados = wmsLayer.metadataURLs()
     
@@ -15,7 +15,6 @@
     }
     
     function crssAsString() {
-        console.log(wmsLayer.crss())
         if (!wmsLayer.crss())
             return ''
         return wmsLayer.crss().toString()

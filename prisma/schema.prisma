@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  //provider = "postgresql"
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  name      String?
+  password  String
+  role      String   @default("ANONYMOUS")
+
+}
+
+model EnderecoCatalogo {
+  id                 Int             @id @default(autoincrement())
+  createdAt          DateTime        @default(now())
+  sigla              String?
+  nome               String          @unique
+  url_geo_server     String?
+  wmsGetCapabilities String?
+  wfsGetCapabilities String?
+  wcsGetCapabilities String?
+  url_metadados      String?
+  cswGetCapabilities String?
+  RequisicaoWMS      RequisicaoWMS[]
+}
+
+model RequisicaoWMS {
+  id                            Int              @id @default(autoincrement())
+  requisitadoEm                 DateTime         @default(now())
+  tempo_requisicao              Float
+  qtd_camadas                   Int
+  qtd_camadas_sem_metadados     Int
+  qtd_camadas_sem_palavra_chave Int
+  enderecoCatalogoId            Int
+  enderecoCatalogo              EnderecoCatalogo @relation(fields: [enderecoCatalogoId], references: [id])
+}

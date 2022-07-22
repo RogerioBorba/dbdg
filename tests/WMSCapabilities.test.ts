@@ -1,6 +1,6 @@
 import {WMSCapabilities} from '../src/lib/OGC/WMS/WMSCapabilities'
 import { expect, it } from "vitest"
-import {bndesXML, ebXML, ideRSXML, cnpm_embrapaXML} from '../src/lib/OGC/WMS/xml_capabilities'
+import {bndesXML, ebXML, ideRSXML, cnpm_embrapaXML, inpeXML} from '../src/lib/OGC/WMS/xml_capabilities'
 import { textXml2Json } from '../src/lib/xml_json/xml2Json';
 let xmlJsonObject = textXml2Json(bndesXML)
 let wms_capabilities =  new WMSCapabilities(xmlJsonObject)
@@ -154,5 +154,50 @@ it('Check WMS Capability Group', () => {
     expect(cnpm_embrapa_wms_capabilities.layerObjects()[0]).toBeDefined()    
     expect(cnpm_embrapa_wms_capabilities.allKeywords()).includes('idaf_ac_totbov_0001a0010_cabsporprop_2475ptos')
     expect(cnpm_embrapa_wms_capabilities.allKeywords()).includes('features')
-    console.log(cnpm_embrapa_wms_capabilities.allKeywords())
+})
+
+let inpe_xmlJsonObject = textXml2Json(inpeXML)
+let inpe_wms_capabilities =  new WMSCapabilities(inpe_xmlJsonObject)
+it('Check WMS Service Group INPE', () => {
+    
+    expect(inpe_wms_capabilities.serviceName()).toBe('WMS')
+    expect(inpe_wms_capabilities.serviceTitle()).toBe('Geoservices TerraBrasilis')
+    expect(inpe_wms_capabilities.serviceAbstract()).toBeUndefined()
+    expect(inpe_wms_capabilities.serviceKeywords()).toContain('geoserviços')
+    expect(inpe_wms_capabilities.serviceKeywords()).toContain('DETER')
+    expect(inpe_wms_capabilities.serviceContactInformationOrganization()).toBe('Terrabrasilis')
+    expect(inpe_wms_capabilities.serviceContactInformationeMail()).toBe('terrabrasilis@dpi.inpe.br')
+})
+
+it('Check WMS Capability Group INPE',  () => {
+    expect(inpe_wms_capabilities.capabilityException()).toBeDefined()
+    expect(inpe_wms_capabilities.capabilityExceptionFormat()).toContain('XML')
+    expect(inpe_wms_capabilities.capabilityRequestGetCapabilitiesDCPTypeHTTPGet()).toBeDefined()
+    expect(inpe_wms_capabilities.capabilityRequestGetCapabilitiesDCPTypeHTTPPost()).toBeDefined()
+    expect(inpe_wms_capabilities.capabilityRequestGetFeatureInfoDCPTypeHTTPGet()).toBeDefined()
+    expect(inpe_wms_capabilities.capabilityRequestGetFeatureInfoFormat()).toContain('text/xml')
+    expect(inpe_wms_capabilities.capabilityRequestGetFeatureInfoFormat()).toContain('text/html')
+    expect(inpe_wms_capabilities.capabilityRequestGetFeatureInfoFormat()).toContain('application/json')  
+    expect(inpe_wms_capabilities.capabilityRequestGetMap()).toBeTruthy()
+    expect(inpe_wms_capabilities.capabilityRequestGetMapFormat()).toContain('image/png')
+    expect(inpe_wms_capabilities.capabilityRequestGetMapFormat()).toContain('application/vnd.google-earth.kml+xml')
+    expect(inpe_wms_capabilities.capabilityRequestGetMapFormat()).toContain('text/html; subtype=openlayers')
+    expect(inpe_wms_capabilities.capabilityRequestGetMapDCPType()).toBeDefined()
+    expect(inpe_wms_capabilities.capabilityRequestGetMapDCPTypeHTTPGet()).toBeDefined()
+    expect(inpe_wms_capabilities.capabilityRequestGetMapDCPTypeHTTPPost()).toBeUndefined()
+    expect(inpe_wms_capabilities.capabilityRequestParentLayer()).toBeDefined()
+    expect(inpe_wms_capabilities.parentLayerName()).toBeNull()
+    expect(inpe_wms_capabilities.parentLayerTitle()).toBe('Geoservices TerraBrasilis')
+    expect(inpe_wms_capabilities.parentLayerAbstract()).toBeUndefined()
+    expect(inpe_wms_capabilities.parentLayerCRSs()).toContain('EPSG:3857')
+    expect(inpe_wms_capabilities.parentLayerCRSs()).toContain('EPSG:4326')
+    expect(inpe_wms_capabilities.parentLayerEXGeographicBoundingBoxWestBoundLongitude()).toBe('-91.67')
+    expect(inpe_wms_capabilities.parentLayerEXGeographicBoundingBoxEastBoundLongitude()).toBe('-28.63')
+    expect(inpe_wms_capabilities.parentLayerEXGeographicBoundingBoxSouthBoundLatitude()).toBe('-55.91')
+    expect(inpe_wms_capabilities.parentLayerEXGeographicBoundingBoxNorthBoundLatitude()).toBe('12.6')
+    expect(inpe_wms_capabilities.parentLayerBoundingBox()).toBeDefined()
+    expect(inpe_wms_capabilities.layerObjects()).toBeDefined()
+    expect(inpe_wms_capabilities.layerObjects()[0]).toBeDefined()    
+    expect(inpe_wms_capabilities.allKeywords()).includes('accumulated_deforestation')
+    expect(inpe_wms_capabilities.allKeywords()).includes('features')
 })

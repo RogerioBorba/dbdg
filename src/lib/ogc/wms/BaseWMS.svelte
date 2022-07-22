@@ -76,7 +76,7 @@
 
 
 <form class="relative" on:submit|preventDefault={handleSubmit}>
-	<select class="border-b-2 shadow-2xl w-full h-11 bg-gray-100 border-blue-500 focus:outline-none" bind:value={selectedIDTextIRI} on:change={onChange}>
+	<select class="border-b-2 shadow-2xl text-sm w-full h-11 bg-gray-100 border-blue-500 focus:outline-none" bind:value={selectedIDTextIRI} on:change={onChange}>
 		{#each iriArray as iri}
 			<option value={iri}>
 				{iri.text}
@@ -85,7 +85,7 @@
 	</select>
     
     <div class="flex mt-4 relative text-gray-700">
-        <input class="w-full h-8 pl-3 pr-8 text-base  border rounded-lg focus: outline-none" placeholder="URL WMS GetCapabilities" type="text" bind:value={selectedIDTextIRI.iri} title={selectedIDTextIRI.iri}>
+        <input class="w-full h-8 pl-3 pr-8 text-sm  border rounded-lg focus: outline-none" placeholder="URL WMS GetCapabilities" type="text" bind:value={selectedIDTextIRI.iri} title={selectedIDTextIRI.iri}>
         <button class="focus:outline-none bg-grey-light hover:bg-grey text-grey-darkest font-bold py-1 px-1 rounded inline-flex items-center hover:bg-gray-100" on:click|preventDefault={btnSearchClicked} title="Buscar camadas">
             <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
         </button>

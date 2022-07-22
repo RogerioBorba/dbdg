@@ -521,7 +521,7 @@ export class WMSCapabilities {
         if (!layers)
             return []
         const layerObjects =  layers.filter((layerObj) => {
-           return layerObj['KeywordList'] && layerObj['KeywordList']['Keyword'] 
+           return layerObj && layerObj['KeywordList'] && layerObj['KeywordList']['Keyword'] 
         })
         
         for(let i =0; i < layerObjects.length; i++) {

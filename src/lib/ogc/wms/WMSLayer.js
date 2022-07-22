@@ -198,8 +198,6 @@ export class WMSLayer {
 
     metadataURLs() {
         let metadataObjs = this.wmsLayerCapability['MetadataURL']
-        console.log("metadataObj")
-        
         if (metadataObjs) {
             if (Array.isArray(metadataObjs))
                 return metadataObjs.map( metadataObj => new MetadataURL(metadataObj))

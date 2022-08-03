@@ -48,6 +48,17 @@ class EXGeographicBoundingBox{
 class Style {
     constructor(styleObject) {
         this.styleObject = styleObject
+        this.name = this._name()
+        this.title = this._title()
+        this.abstract = this._abstract()
+        this.legendGraphicURL = null
+        this.legendGraphicFormat = null
+        if (this.legendGraphic()) {
+            this.legendGraphicURL = this.legendGraphic().link()
+            this.legendGraphicFormat = this.legendGraphic().contentType()
+        }
+            
+        
     }
     
     objCapability(propertyName) {
@@ -61,21 +72,20 @@ class Style {
         return obj['#text']
     }
 
-    name() {
+    _name() {
         return this.objCapability('Name')
     }
 
-    title() {
+    _title() {
         return this.objCapability('Title')
     }
 
-    abstract() {
+    _abstract() {
         return this.objCapability('Abstract')
     }
 
     legendGraphic() {
         let lGraphic = new LegendGraphic(this.styleObject['LegendURL'])
-        console.log(lGraphic)
         return lGraphic
     }
 }

@@ -1,3 +1,4 @@
+import {DOMParser} from 'xmldom'
 export function xml2json(xml) {
 	
 	// Create the return object
@@ -73,7 +74,8 @@ export function xml2json(xml) {
 	  parser = new DOMParser();	
 	} catch (error) {
 		console.log("NodeJS Enviroment")
-		const { DOMParser } = require('xmldom')
+		//const  DOMParser  = require('xmldom')
+		
 		parser = new DOMParser()
 		
 	}

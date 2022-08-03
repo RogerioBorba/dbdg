@@ -658,7 +658,19 @@ export const catalogos_servicos = [
     "wcsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/UFABC/ows?service=wcs&request=GetCapabilities&version=1.3.0",
     "url_metadados": "https://metadados.inde.gov.br/geonetwork",
     "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-    }
+    },
+    {
+        "descricao": "FMADS - Fundação Municipal do Meio Ambiente e Desenvolvimento Sustentável de São José / SC",
+        "url": "https://geoservicos.inde.gov.br/geoserver/SCSJFMADS/ows",
+        "wmsAvailable": true,
+        "wfsAvailable": true,
+        "wcsAvailable": true,
+        "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/SCSJFMADS/ows?service=wms&request=GetCapabilities&version=1.3.0",
+        "wfsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/SCSJFMADS/ows?service=wfs&request=GetCapabilities&version=1.3.0",
+        "wcsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/SCSJFMADS/ows?service=wcs&request=GetCapabilities&version=1.3.0",
+        "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+        "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        }
     ]
     export const catalogos_metadados = [
         {"descricao": "Catalógo de metadados do Nó central da INDE",  url: 'https://metadados.inde.gov.br/geonetwork/srv/por/csw'}

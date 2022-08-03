@@ -46,7 +46,6 @@ it('Check WMS Capability Group BNDES', () => {
     expect(wms_capabilities.parentLayerEXGeographicBoundingBoxNorthBoundLatitude()).toBe('32.72')
     expect(wms_capabilities.parentLayerBoundingBox()).toBeDefined()
     expect(wms_capabilities.layerObjects()).toBeDefined()
-    expect(wms_capabilities.layerObjects()).toBeDefined()  
     expect(wms_capabilities.allKeywords()).includes('AP_2009')
     
 })

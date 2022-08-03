@@ -8,7 +8,7 @@
     function stylesAsString() {
         if (!wmsLayer.styles())
             return ''
-        return wmsLayer.styles().map( st => st.title()).toString()
+        return wmsLayer.styles().map( st => st.title || st.name).toString()
     }
     function keywordsString() {
         return (wmsLayer.keywords())? wmsLayer.keywords().toString(): 'Não há palavras chaves'

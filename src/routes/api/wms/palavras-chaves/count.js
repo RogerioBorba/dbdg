@@ -1,4 +1,4 @@
-import {wmsKeywordObj} from "$lib/ogc/wms/data/json_keywords";
+import {wmsKeywordObj} from "$lib/inde/wms/data/json_keywords";
 
 export async function get({ request }) {
     return {

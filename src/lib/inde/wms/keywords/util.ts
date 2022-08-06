@@ -10,8 +10,8 @@ export function keywordsCountByName(): any[] {
             countByName[keyword] = 1
     }
     const sorted = Object.entries(countByName).sort((a,b) => (a[1] < b[1]) ? 1 : ((b[1] < a[1]) ? -1 : 0))
-    return sortedObjectArray = sorted.map( (arr) => {
-        obj = {} 
+    return sorted.map( (arr) => {
+        let obj = {} 
         obj[arr[0]] = arr[1]
         return obj
     })

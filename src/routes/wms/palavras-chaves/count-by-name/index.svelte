@@ -1,29 +1,59 @@
 <script context="module">
+    import { keywordsCountByName } from "$lib/inde/wms/keywords/util";
     export async function load({params, fetch, session, stuff}) {
-        const url = 'http://localhost:3000/api/wms/palavras-chaves/count-by-name'
+        const url = 'http://localhost:3000/api/wms/palavras-chaves/count-by-name/1&100'
         const res = await fetch(url)
         const keywords_by_name = await res.json()
-        console.log(keywords_by_name)
-        return {props: {keywords_by_name}}
+        return {props: {keywords_by_name: keywords_by_name, total: keywordsCountByName().length }}
     }
 </script>
-<script>
+<script lang="ts">
     import { TableData } from "flowbite-svelte";
-
-    let helper = {
-    start: 1,
-    end: 10,
-    total: 100
-    };
-    export let keywords_by_name ;
-    function previous() {
-
+    export let keywords_by_name;
+    export let total;
+    let start = 1
+    let end = 100
+    let iri = `http://localhost:3000/api/wms/palavras-chaves/count-by-name/`
+    $: {
+        helper = {start, end, total}
+    }
+    
+    let helper = {start, end, total}
+    
+    async function previous() {
+        start = start - 100
+        end = end - 100
+        if (start <= 0) 
+            start = 1 
+        if (end <= 0)
+            end = 100
+        console.log(start, end)
+        await fetchData(iri + `${start}&${end}`)    
     }
 
-    function next() {
-        
+    async function next() {
+        start = start + 100
+        end = end + 100
+        if (start > total) 
+            start = total 
+            
+        if (end > total)
+            end = total
+        console.log(start, end)
+        iri = iri
+        await fetchData(iri + `${start}&${end}`)    
     }
 
+    async function fetchData(url) {
+        try {
+            console.log(url)
+            let res = await fetch(url)
+            keywords_by_name = await res.json()
+            console.log(keywords_by_name)    
+        } catch (error) {
+            alert("ERRO  na requisiçao")
+        }
+    }
 </script>
 <TableData on:next={next} on:previous={previous} {helper}/>
 <div class = "m-2 grid gap-2 md:grid-cols-4 grid-cols-2">

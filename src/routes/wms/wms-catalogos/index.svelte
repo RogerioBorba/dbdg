@@ -1,8 +1,8 @@
 <script lang="ts">
-    import {catalogos_servicos} from '../../lib/inde/CatalogoINDE'
-    import Navbar from '../../lib/components/base/navbar.svelte'
-    import {getWMSCapabilitiesObject} from './../../lib/ogc/wms/WMSCapabilitiesObject'
-    import WMSCapabilitiesCard from './../../lib/ogc/wms/WMSCapabilitiesCard.svelte';
+    import {catalogos_servicos} from '$lib/inde/CatalogoINDE'
+    import Navbar from '$lib/components/base/navbar.svelte'
+    import {getWMSCapabilitiesObject} from '$lib/ogc/wms/WMSCapabilitiesObject'
+    import WMSCapabilitiesCard from '$lib/ogc/wms/WMSCapabilitiesCard.svelte';
     let objIdTextIRICapabilitiesArray = []
     let selectedItems = []
     let promise = null

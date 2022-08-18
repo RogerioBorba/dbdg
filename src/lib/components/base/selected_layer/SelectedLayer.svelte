@@ -7,12 +7,24 @@
         $selectedLayers = $selectedLayers.filter(t => t.oid !== layer.oid)
         layer.remove()
     }
-    
+    function getLegendGraphicURLByLink() {
+        console.log(layer)
+        let url = layer.wmsLayerCapability.link.substring(0, layer.wmsLayerCapability.link.indexOf('?') + 1)
+        return `${url}SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=${layer.sourceLayer.options.layers}`
+    }
     function btnLegendClicked() {
         let styles = layer.styles()
-        if (styles.length > 0)
+        if (styles && styles.length > 0)
             linkLegenda = styles[0].legendGraphicURL
-        console.log(linkLegenda)
+        else {
+            if (layer.wmsLayerCapability.link) {
+            
+                linkLegenda = getLegendGraphicURLByLink()
+                console.log(linkLegenda)
+            }
+                
+        }
+        console.log(layer)
         hidden = (hidden == 'hidden')?'': 'hidden'        
     }
     

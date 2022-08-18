@@ -5,6 +5,7 @@
     import BaseTiles from '../lib/components/base/base_tile_layer/BaseTiles.svelte';
    // import BaseWMS from "../lib/ogc/wms/BaseWMS.svelte";
    import TabWMS from '$lib/ogc/wms/TabWMS.svelte'
+   import TabCSW from '$lib/ogc/wms/TabCSW.svelte'
    import BaseSelectedLayer from '../lib/components/base/selected_layer/BaseSelectedLayer.svelte'
     
 </script>
@@ -39,6 +40,7 @@
 		</span>
 		<span slot='content'>
 			<!--<BaseCSW/>-->
+			<TabCSW></TabCSW>
 		</span>
 	</ExpansionPanel>
     <ExpansionPanel header={"Camadas selecionadas"}>

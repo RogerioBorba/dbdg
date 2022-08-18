@@ -21,17 +21,18 @@ export async function get({ request }) {
   let urlGetCapabilties 
   if (index > 0)
     urlGetCapabilties = request.url.substring(index).trim()
+  
     let response = await getOnServer(urlGetCapabilties)
-     if (response) {
-      let res = await response.text()
-      let headers = await response.headers
-      let text_headers = ''
-      return {
-        status: 200,
-        body: res
-        
-      };
-    }
+    if (response) {
+    let res = await response.text()
+    let headers = await response.headers
+    let text_headers = ''
+    return {
+      status: 200,
+      body: res
+      
+    };
+  }
    
     return {
       status: 404

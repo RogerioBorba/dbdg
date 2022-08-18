@@ -1,11 +1,9 @@
 <script>
     import { onMount } from 'svelte'
     import {WMSLayer} from './WMSLayer.js'
-    import { textXml2Json} from '../../xml_json/xml2Json.js'
     import WMSCapabilityLayer from './WMSCapabilityLayer.svelte'
     import {catalogos_servicos} from '../../inde/CatalogoINDE'
     import { getWMSCapabilitiesObject } from './WMSCapabilitiesObject';
-    let arr_name_url = []
     let promise = null
     let firstIDTextIRIObj = { id: 1, text: "Escolha um catálogo", iri: '' }
     let selectedIDTextIRI =  firstIDTextIRIObj
@@ -59,8 +57,8 @@
 	}
 
     function onChange(value) {
-        console.log(value)
-        console.log(selectedIDTextIRI)
+        //console.log(value)
+        //console.log(selectedIDTextIRI)
     }
 
     onMount(async () => {

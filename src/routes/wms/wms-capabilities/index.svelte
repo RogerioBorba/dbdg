@@ -1,7 +1,7 @@
 <script lang="ts">
-    import {currentListWMSCapability} from './../../lib/store/store'
-    import WMSLayerCard from './../../lib/ogc/wms/WMSLayerCard.svelte'
-    import {WMSLayer} from './../../lib/ogc/wms/WMSLayer'
+    import {currentListWMSCapability} from '$lib/store/store'
+    import WMSLayerCard from '$lib/ogc/wms/WMSLayerCard.svelte'
+    import {WMSLayer} from '$lib/ogc/wms/WMSLayer'
     import { onMount } from 'svelte';
     import { Navbar, NavBrand, Dropdown, DropdownHeader, Avatar, DropdownItem, DropdownDivider, NavUl, NavHamburger, NavLi } from 'flowbite-svelte';
     let wmsLayers = []

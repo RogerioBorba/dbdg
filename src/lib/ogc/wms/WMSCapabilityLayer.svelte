@@ -2,23 +2,26 @@
     import {map, selectedLayers } from '../../store/store'
     import L from 'leaflet'
     import { textXml2Json } from '../../xml_json/xml2Json';
+    import { fetchData } from '$lib/request/requestData';
     export let wmsLayer;
     export let capabilitiesUrl;
     let source = null;
     let sourceLayer = null;
     let display = ''
-         
+      
     async function btnMetadadoClicked() {
-        if (!wmsLayer.metadataURL())
+        if (!wmsLayer.metadataURLs())
             return alert("A camada não está associada a metadados.")
-        let link = wmsLayer.metadataURL().link()
-        console.log(link)
-        const res = await fetch(link);
+
+        let link = wmsLayer.metadataURLs()[0].link() //wmsLayer.metadataURL().link()
+        const res = await fetchData(link);
         if (!res.ok) 
 		    throw new Error('Falha na requisição do endereço.')
         const text = await res.text()
-        console.log(textXml2Json(text))
-        alert(text)   
+        //console.log(text)
+        const textJson = textXml2Json(text)
+        console.log(textJson)
+        // alert(textJson)   
     }
     
     function url() {
@@ -30,6 +33,7 @@
 
     function btnAddLayerClicked() {
         let z_index = $selectedLayers.length + 1
+        
         source = L.tileLayer.wms(url(), {layers: wmsLayer.name(),format: 'image/png',transparent: true, zIndex: z_index });
         source.addTo($map)
         wmsLayer.sourceLayer = source

@@ -13,22 +13,22 @@
     let nameCatalog = ''
     let adressCatalog =''
     let disableButtonAddNewCatalog = true
-    const newObjIdDescricaoIRI = (obj) => {
-        return { id: i++, descricao: obj.descricao, iri: obj.cswGetCapabilities }
+    const newObjIdDescricaoIRINoCentralCategoria = (obj) => {
+        return { id: i++, descricao: obj.descricao, iri: obj.cswGetCapabilities, noCentralCategoria: obj.noCentralCategoria }
     }      
-    let objIdDescricaoIRIArray = catalogos_csw.map( (obj) => newObjIdDescricaoIRI(obj))
+    let objIdDescricaoIRINoCentralCategoriaArray = catalogos_csw.map( (obj) => newObjIdDescricaoIRINoCentralCategoria(obj))
     
     
     const addNewCatalog = () => {
-        let objIdDescricaoIRI = {id: objIdDescricaoIRIArray.length + 1, descricao: nameCatalog, iri: adressCatalog}
-        objIdDescricaoIRIArray = [...objIdDescricaoIRIArray, objIdDescricaoIRI]
+        let objIdDescricaoIRI = {id: objIdDescricaoIRINoCentralCategoriaArray.length + 1, descricao: nameCatalog, iri: adressCatalog, noCentralCategoria: null}
+        objIdDescricaoIRINoCentralCategoriaArray = [...objIdDescricaoIRINoCentralCategoriaArray, objIdDescricaoIRI]
         nameCatalog = ''
         adressCatalog = ''
     }
         
     const isChecking = () => {
         if (!checked) 
-            selectedItems = [...objIdDescricaoIRIArray]
+            selectedItems = [...objIdDescricaoIRINoCentralCategoriaArray]
         else {
            
             i = 1
@@ -60,7 +60,7 @@
         
     </div>
     <select size=6 multiple id="instituicoes_multiple" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" bind:value={selectedItems}>
-        {#each objIdDescricaoIRIArray as obj}   
+        {#each objIdDescricaoIRINoCentralCategoriaArray as obj}   
             <option value={obj}>
                 {obj.descricao}
             </option>
@@ -75,7 +75,7 @@
 <div class = "m-2 grid gap-2 md:grid-cols-3 grid-cols-1">
        
         {#each selectedCatalogs as objIdDescricaoIri}
-            <CSWCatalogCard idDescricaoIri={objIdDescricaoIri} ></CSWCatalogCard>
+            <CSWCatalogCard idDescricaoIriNoCentralCategoria={objIdDescricaoIri} ></CSWCatalogCard>
         {/each}
     
 

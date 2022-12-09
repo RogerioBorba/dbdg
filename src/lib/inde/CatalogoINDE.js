@@ -479,19 +479,6 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "MINFRA - Ministério da Infraestrutura",
-    "sigla": "MINFRA",
-    "url": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows",
-    "wmsAvailable": true,
-    "wfsAvailable": true,
-    "wcsAvailable": true,
-    "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows?service=wms&request=GetCapabilities&version=1.3.0",
-    "wfsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows?service=wfs&request=GetCapabilities&version=1.3.0",
-    "wcsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows?service=wcs&request=GetCapabilities&version=1.3.0",
-    "url_metadados": "https://metadados.inde.gov.br/geonetwork",
-    "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-    },
-    {
     "descricao": "MP - Ministério de Planejamento, Desenvolvimento e Gestão ",
     "sigla": "MP",
     "url": "https://geoservicos.inde.gov.br/geoserver/MPOG/ows",
@@ -753,6 +740,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "UFABC/SP - Universidade Federal do ABC ",
+    "sigla": "UFABC",            
     "url": "https://geoservicos.inde.gov.br/geoserver/UFABC/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -779,82 +767,235 @@ export const catalogos_servicos = [
     ]
     export const catalogos_csw = [
         {
-            "descricao": "Prefeitura de Belo Horizante",  
-            "sigla": "PrefeituraBH",
-            "url": "http://geonetwork.pbh.gov.br/geonetwork/",
-            "cswGetCapabilities": "http://geonetwork.pbh.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "ANA - Agência Nacional de Águas e Saneamento Básico",
+            "sigla": "ANA",
+            "url": "https://metadados.snirh.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.snirh.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
         },
         {
-            "descricao": "SEPLAG/AL - Secretaria de Estado do Planejamento, Gestão e Patrimônio de Alagoas",  
-            "sigla": "SEPLAGAL",
-            "url": "http://inde.dados.al.gov.br:8080/geonetwork",
-            "cswGetCapabilities": "http://inde.dados.al.gov.br:8080/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "ANATEL - Agência Nacional de Telecomunicações",
+            "sigla": "ANATEL",
+            "url": "https://sistemas.anatel.gov.br/geonetwork",
+            "cswGetCapabilities": "https://sistemas.anatel.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
         },
         {
-            "descricao": "EMBRAPA - Empresa Brasileira de Pesquisa Agropecuária",  
-            "sigla": "EMBRAPA",
-            "url": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde",
-            "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "ANM - Agência Nacional de Mineração",
+            "sigla": "ANM",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "ANM"
         },
         {
-            "descricao": "MDA - Ministério do Desenvolvimento Agrário",  
-            "sigla": "MDA",
-            "url": "http://mapas.mda.gov.br/geonetwork",
-            "cswGetCapabilities": "http://mapas.mda.gov.br/geonetwork/srv/pt/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "ANP - Agência Nacional de Petróleo",
+            "sigla": "ANP",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "ANP"
         },
         {
-            "descricao": "MMA - Minstério do Meio Ambiente",  
-            "sigla": "MMA",
-            "url": "http://mapas.mma.gov.br/geonetwork",
-            "cswGetCapabilities": "http://mapas.mma.gov.br/geonetwork/srv/br/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-        },
-        {
-            "descricao": "MS - Ministério da Saúde",  
-            "sigla": "MS",
-            "url": "http://mapas.sage.saude.gov.br/geonetwork",
-            "cswGetCapabilities": "http://mapas.sage.saude.gov.br/geonetwork/srv/br/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "BNDES - Banco Nacional de Desenvolvimento Econômico e Social ",
+            "sigla": "BNDES",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "BNDES"
         },
         {
             "descricao": "CENSIPAM - Centro Gestor e Operacional do Sistema de Proteção da Amazônia",  
             "sigla": "CENSIPAM",
             "url": "http://panorama.sipam.gov.br/geonetwork/",
-            "cswGetCapabilities": "http://panorama.sipam.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "cswGetCapabilities": "http://panorama.sipam.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
         },
         {
-            "descricao": "INPE - Instituto Nacional de Pesquisas Espaciais",  
-            "sigla": "INPE",
-            "url": "http://terrabrasilis.dpi.inpe.br/geonetwork/",
-            "cswGetCapabilities": "http://terrabrasilis.dpi.inpe.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "CPRM - Serviço Geológico do Brasil",
+            "sigla": "CPRM",
+            "url": "http://www.metadados.cprm.gov.br/geonetwork",
+            "cswGetCapabilities": "http://www.metadados.cprm.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
         },
         {
-            "descricao": "Infraestrutura de Dados Espaciais de São Paulo",  
-            "sigla": "IDESP",
-            "url": "http://www.metadados.idesp.sp.gov.br/",
-            "cswGetCapabilities": "http://www.metadados.idesp.sp.gov.br/catalogo/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "DNIT - Departamento Nacional de Infraestrutura de Transportes",
+            "sigla": "DNIT",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "DNIT"
+        },
+        {
+            "descricao": "DHN - Diretoria de Hidrografia e Navegação da Marinha do Brasil",  
+            "sigla": "MB/DHN",
+            "url": "https://idem.dhn.mar.mil.br/geonetwork",
+            "cswGetCapabilities": "https://idem.dhn.mar.mil.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "DPC- Diretoria de Portos e Costas da Marinha",
+            "sigla": "MB/DPC",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "DPC"
+        },
+        {
+            "descricao": "DPHDM - Diretoria do Patrimônio Histórico e Documentação da Marinha",
+            "sigla": "MB/DPHDM",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "DPHDM"
         },
         {
             "descricao": "EB/DSG - Diretoria de Serviço Geográfico do Exército Brasileiro",  
             "sigla": "EBDSG",
             "url": "https://bdgex.eb.mil.br/bdgexapp",
-            "cswGetCapabilities": "https://bdgex.eb.mil.br/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "cswGetCapabilities": "https://bdgex.eb.mil.br/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
         },
         {
-            "descricao": "SEFIN - Secretaria Municipal das Finanças de Fortaleza",  
-            "sigla": "SEFIN",
-            "url": "https://geonetwork.sefin.fortaleza.ce.gov.br/geonetwork/",
-            "cswGetCapabilities": "https://geonetwork.sefin.fortaleza.ce.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "EMBRAPA - Empresa Brasileira de Pesquisa Agropecuária",  
+            "sigla": "EMBRAPA",
+            "url": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde",
+            "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "Engenharia, Construções e Ferrovias S.A",
+            "sigla": "VALEC",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "VALEC"
+        },
+        {
+            "descricao": "IBAMA - Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis ",
+            "sigla": "IBAMA",
+            "url": "http://siscom.ibama.gov.br/geonetwork/",
+            "cswGetCapabilities": "http://siscom.ibama.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "IBGE - Instituto Brasileiro de Geografia e Estatística ",
+            "sigla": "IBGE",
+            "url": "https://metadadosgeo.ibge.gov.br",
+            "cswGetCapabilities": "https://metadadosgeo.ibge.gov.br/geonetwork_ibge/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "ICA - Instituto de Cartografia Aeronáutica ",
+            "sigla": "ICA",
+            "url": "https://metadados.inde.gov.br/geonetwork/srv/por/q?category=ICA",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "ICA"
+        },
+        {
+            "descricao": "ICMBIO - Instituto Chico Mendes de Conservação da Biodiversidade",
+            "sigla": "ICMBio",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "ICMBio"
+        },
+        {
+            "descricao": "INPE - Instituto Nacional de Pesquisas Espaciais",  
+            "sigla": "INPE",
+            "url": "http://terrabrasilis.dpi.inpe.br/geonetwork/",
+            "cswGetCapabilities": "http://terrabrasilis.dpi.inpe.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "MINFRA - Ministério da Infraestrutura",
+            "sigla": "MINFRA",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "MInfra"
+        },
+        {
+            "descricao": "MS - Ministério da Saúde",  
+            "sigla": "MS",
+            "url": "http://mapas.sage.saude.gov.br/geonetwork",
+            "cswGetCapabilities": "http://mapas.sage.saude.gov.br/geonetwork/srv/br/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "MDA - Ministério do Desenvolvimento Agrário",  
+            "sigla": "MDA",
+            "url": "http://mapas.mda.gov.br/geonetwork",
+            "cswGetCapabilities": "http://mapas.mda.gov.br/geonetwork/srv/pt/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "MDS - Ministério do Desenvolvimento Social e Combate à Fome",  
+            "sigla": "MDS",
+            "url": "http://mapas.mma.gov.br/geonetwork",
+            "cswGetCapabilities": "http://mapas.mma.gov.br/geonetwork/srv/br/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "MDS"
+        },
+        {
+            "descricao": "MMA - Minstério do Meio Ambiente",  
+            "sigla": "MMA",
+            "url": "http://mapas.mma.gov.br/geonetwork",
+            "cswGetCapabilities": "http://mapas.mma.gov.br/geonetwork/srv/br/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "MP - Ministério de Planejamento, Desenvolvimento e Gestão ",
+            "sigla": "MP",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "MPOG"
+        },
+        {
+            "descricao": "SPM - Secretaria Nacional de Políticas para as Mulheres",
+            "sigla": "SPM",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "SPM"
+        },
+        {
+            "descricao": "UFABC/SP - Universidade Federal do ABC",
+            "sigla": "UFABC",            
+            "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "UFABC"
+        },
+        {
+            "descricao": "UNB - Fundação Universidade de Brasília / Instituto de Geociências",
+            "sigla": "UNB",            
+            "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "CEAGUNB"
+        },
+        {
+            "descricao": "UNILA - Universidade Federal da Integração Latino-Americana",
+            "sigla": "UNILA",            
+            "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "UNILA"
+        },
+        {
+            "descricao": "IDE/DF - Infraestrutura de Dados Espaciais do Distrito Federal",
+            "sigla": "IDE/DF",
+            "url": "https://www.metadados.seduh.df.gov.br/geonetwork",
+            "cswGetCapabilities": "https://www.metadados.seduh.df.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "SEMA/DF - Secretaria de Estado do Meio Ambiente do Distrito Federal",
+            "sigla": "SEMADF",
+            "url": "https://metadados.sisdia.df.gov.br/geonetwork/",
+            "cswGetCapabilities": "https://metadados.sisdia.df.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "IDE/SP - Infraestrutura de Dados Espaciais de São Paulo",  
+            "sigla": "IDESP",
+            "url": "http://www.metadados.idesp.sp.gov.br/",
+            "cswGetCapabilities": "http://www.metadados.idesp.sp.gov.br/catalogo/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
         },
         {
             "descricao": "IDE/ES-GEOBASES - Sistema Integrado de Bases Geoespaciais do Estado do Espírito Santo",  
             "sigla": "IDEES",
             "url": "https://ide.geobases.es.gov.br/",
-            "cswGetCapabilities": "https://ide.geobases.es.gov.br/catalogue/csw?service=CSW&request=GetCapabilities&version=2.0.2"
-        },
-        {
-            "descricao": "MB/DHN - Diretoria de Hidrografia e Navegação da Marinha do Brasil",  
-            "sigla": "DHN",
-            "url": "https://idem.dhn.mar.mil.br/geonetwork",
-            "cswGetCapabilities": "https://idem.dhn.mar.mil.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "cswGetCapabilities": "https://ide.geobases.es.gov.br/catalogue/csw?service=CSW&request=GetCapabilities&version=2.0.2",
+            "noCentralCategoria": null
         },
         {
             "descricao": "IEDE/RS - Infraestrutura Estadual de Dados Espaciais do Rio Grande do Sul",
@@ -863,53 +1004,59 @@ export const catalogos_servicos = [
             "cswGetCapabilities": "https://iede.rs.gov.br/geoportal/csw?service=CSW&version=2.0.2&request=GetCapabilities"
         },
         {
-            "descricao": "CPRM -  Serviço Geológico do Brasil",
-            "sigla": "CPRM",
-            "url": "http://www.metadados.cprm.gov.br/geonetwork",
-            "cswGetCapabilities": "http://www.metadados.cprm.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-        },
-        {
-            "descricao": "SEMA/DF - Secretaria de Estado do Meio Ambiente do Distrito Federal",
-            "sigla": "SEMADF",
-            "url": "https://metadados.sisdia.df.gov.br/geonetwork/",
-            "cswGetCapabilities": "https://metadados.sisdia.df.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-        },
-        {
-            "descricao": "ANA - Agência Nacional de Águas e Saneamento Básico",
-            "sigla": "ANA",
-            "url": "https://metadados.snirh.gov.br/geonetwork",
-            "cswGetCapabilities": "https://metadados.snirh.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-        },
-        
-        {
-            "descricao": "IBGE - Instituto Brasileiro de Geografia e Estatística ",
-            "sigla": "IBGE",
-            "url": "https://metadadosgeo.ibge.gov.br",
-            "cswGetCapabilities": "https://metadadosgeo.ibge.gov.br/geonetwork_ibge/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-        },
-        {
-            "descricao": "IBAMA - Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis ",
-            "sigla": "IBAMA",
-            "url": "http://siscom.ibama.gov.br/geonetwork/",
-            "cswGetCapabilities": "http://siscom.ibama.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-        },
-        {
-            "descricao": "ANATEL - Agência Nacional de Telecomunicações",
-            "sigla": "ANATEL",
-            "url": "https://sistemas.anatel.gov.br/geonetwork",
-            "cswGetCapabilities": "https://sistemas.anatel.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "descricao": "INEA/RJ - Instituto Estadual do Ambiente",
+            "sigla": "INEA",
+            "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "INEA"
         },
         {
             "descricao": "PRODEMG - Companhia de Tecnologia da Informação do Estado de Minas Gerais",
             "sigla": "PRODEMG",
             "url": "https://www.geoservicos.prodemge.gov.br/geonetwork",
-            "cswGetCapabilities": "https://www.geoservicos.prodemge.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+            "cswGetCapabilities": "https://www.geoservicos.prodemge.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
         },
-        
         {
-            "descricao": "IDE/DF - Infraestrutura de Dados Espaciais do Distrito Federal",
-            "sigla": "IDE/DF",
-            "url": "https://www.metadados.seduh.df.gov.br/geonetwork",
-            "cswGetCapabilities": "https://www.metadados.seduh.df.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-        }
+            "descricao": "SEMACE/CE - Superintendência Estadual do Meio Ambiente do Ceará",
+            "sigla": "SEMACECE",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "SEMACECE"
+        },
+        {
+            "descricao": "SEPLAG/AL - Secretaria de Estado do Planejamento, Gestão e Patrimônio de Alagoas",  
+            "sigla": "SEPLAGAL",
+            "url": "http://inde.dados.al.gov.br:8080/geonetwork",
+            "cswGetCapabilities": "http://inde.dados.al.gov.br:8080/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "Prefeitura de Belo Horizante",  
+            "sigla": "PrefeituraBH",
+            "url": "http://geonetwork.pbh.gov.br/geonetwork/",
+            "cswGetCapabilities": "http://geonetwork.pbh.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "Prefeitura de Juazeiro do Norte (CE)",
+            "sigla": "PJN",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "CEPJuazeiroNorte"
+        },  
+        {
+            "descricao": "SEFIN - Secretaria Municipal das Finanças de Fortaleza",  
+            "sigla": "SEFIN",
+            "url": "https://geonetwork.sefin.fortaleza.ce.gov.br/geonetwork/",
+            "cswGetCapabilities": "https://geonetwork.sefin.fortaleza.ce.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": null
+        },
+        {
+            "descricao": "SEFAZ - Secretaria Municipal da Fazenda de Salvador",
+            "sigla": "SEFAZ",
+            "url": "https://metadados.inde.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities",
+            "noCentralCategoria": "BAPSalvador"
+        },
     ]

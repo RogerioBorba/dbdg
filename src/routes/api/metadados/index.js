@@ -13,19 +13,17 @@ export async function post({request}) {
 
   async function fetchOnServerPostCSW(urlServer, xml) {
    
-    fetch(urlServer, { method: "POST",body: xml,
-        headers: {"Content-type": "application/xml"}}).then( 
-                 async function(response) {
-            
-                    if(response.ok) {
-                        let res = await response.text()
-                        console.log(res)
-                    } else {
-                      console.log('Network response was not ok.');
-                    }
-                
-                }
-        ) .catch(function(error) {
+    fetch(urlServer, { method: "POST",body: xml, headers: {"Content-type": "application/xml"}}).then( 
+          async function(response) {  
+                      if(response.ok) {
+                          let res = await response.text()
+                          console.log(res)
+                      } else {
+                        console.log('Network response was not ok.');
+                      }
+                  
+          }
+        ).catch(function(error) {
           console.log('There has been another but with your proxy-server fetch , but operation: ' + error.message);
         });       
   }

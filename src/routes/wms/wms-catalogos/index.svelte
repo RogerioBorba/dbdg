@@ -63,7 +63,7 @@
         
         for await (const idTextIRI of selectedItems) {
             let tempo = new Date().getTime();
-            let capa = await getWMSCapabilitiesObject(idTextIRI)  
+            let capa = await getWMSCapabilitiesObject(idTextIRI) 
             tempoRequisicao = parseFloat(((new Date().getTime()) - tempo)/1000).toFixed(2)
             if (capa && capa.lenLayerObjects())  
                 qtdToTalCamadas = qtdToTalCamadas + capa.lenLayerObjects()

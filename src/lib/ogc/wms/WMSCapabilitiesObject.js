@@ -2,8 +2,11 @@ import {WMSCapabilities} from './WMSCapabilities'
 import {textXml2Json} from '../../xml_json/xml2Json'
 
 export async function getWMSCapabilitiesObject(objIdTextIRI) {
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 30000) // 10 seconds timeout:
     try {
-        let res = await fetch(objIdTextIRI.iri)
+        
+        let res = await fetch(objIdTextIRI.iri, { signal: controller.signal })
         if(res.ok) {
             let textXML = await res.text()
             return new WMSCapabilities(await textXml2Json(textXML))
@@ -16,7 +19,7 @@ export async function getWMSCapabilitiesObject(objIdTextIRI) {
         console.log('There has been a problem with your fetch operation in client browser: ' + error.message)
         try {
             console.log('Try fetching on server-proxy')
-            let res = await fetch(`/api/wms/?url=${objIdTextIRI.iri}`)
+            let res = await fetch(`/api/wms/?url=${objIdTextIRI.iri}`, { signal: controller.signal })
             if(res.ok) {
                 console.log('fetch ok')
                 let textXML = await res.text()

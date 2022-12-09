@@ -1,9 +1,6 @@
+import { Record } from './BaseRecord'
 import {Metadata} from './Iso19115/metadata/metadata'
-class Record {
-    nodeValue(node) {
-        return node['#text'] || node['#cdata-section']
-    }
-}
+
 export class RecordISO19115 extends Record{
     constructor(jsonXmlObject: any) {
         super()
@@ -28,6 +25,10 @@ export class RecordISO19115 extends Record{
         if (!this.mdMetadata) 
             this.mdMetadata = new Metadata(this.gmd_MD_Metadata())
         return this.mdMetadata   
+    }
+
+    setMDMetadata(jsonXmlObj) {
+        this.mdMetadata = new Metadata(jsonXmlObj)
     }
 
     

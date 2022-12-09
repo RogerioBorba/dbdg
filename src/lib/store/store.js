@@ -6,3 +6,4 @@ export let map = writable(null);
 
 export let selectedLayers = writable([]);
 export let currentListWMSCapability = writable([]);
+export let countMetadata = writable(0)

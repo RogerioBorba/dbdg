@@ -16,10 +16,16 @@
         <csw:ElementSetName>full</csw:ElementSetName>
         <csw:Constraint version="1.1.0">
             <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+                <ogc:And>
                     <ogc:PropertyIsEqualTo>
                         <ogc:PropertyName>csw:AnyText</ogc:PropertyName>
                         <ogc:Literal>${textEntered}</ogc:Literal>
                     </ogc:PropertyIsEqualTo>
+                    <PropertyIsEqualTo>
+                    <PropertyName>linkProtocol</PropertyName>
+                    <Literal>OGC:WMS</Literal>
+                  </PropertyIsEqualTo>
+                </ogc:And>
             </ogc:Filter>
         </csw:Constraint>
     </csw:Query>

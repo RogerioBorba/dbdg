@@ -1,6 +1,7 @@
 export const catalogos_servicos = [
     {
     "descricao": "ANA - Agência Nacional de Águas e Saneamento Básico",
+    "sigla": "ANA",
     "url": "https://www.snirh.gov.br/arcgis/services/INDE/Camadas/MapServer/WMSServer",
     "wmsAvailable": true,
     "wfsAvailable": false,
@@ -12,7 +13,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://metadados.snirh.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "ANATEL - Agência Nacional de Telecomunicações ",
+    "descricao": "ANATEL - Agência Nacional de Telecomunicações",
+    "sigla": "ANATEL",
     "url": "http://sistemas.anatel.gov.br:80/geoserver/ANATEL/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -25,6 +27,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "ANM - Agência Nacional de Mineração",
+    "sigla": "ANM",
     "url": "https://geoservicos.inde.gov.br/geoserver/ANM/ows",
     "wmsAvailable": true,
     "wfsAvailable": false,
@@ -37,6 +40,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "ANP - Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+    "sigla": "ANP",
     "url": "http://app.anp.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -49,6 +53,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "BNDES - Banco Nacional de Desenvolvimento Econômico e Social ",
+    "sigla": "BNDES",
     "url": "https://geoservicos.inde.gov.br/geoserver/BNDES/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -61,6 +66,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "CENSIPAM - Centro Gestor e Operacional do Sistema de Proteção da Amazônia",
+    "sigla": "CENSIPAM",
     "url": "http://panorama.sipam.gov.br/geoserver/publico/ows/",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -73,6 +79,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "CMR/Funai - Centro de Monitoramento Remoto ",
+    "sigla": "CMR/Funai",
     "url": "http://cmr.funai.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -85,6 +92,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "CPRM -  Serviço Geológico do Brasil",
+    "sigla": "CPRM",
     "url": "https://geoservicos.cprm.gov.br/geoserver/geologia/ows/",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -96,7 +104,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "http://www.metadados.cprm.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "EB/DSG - Diretoria de Serviço Geográfico do  Exército Brasileiro ",
+    "descricao": "EB/DSG - Diretoria de Serviço Geográfico do  Exército Brasileiro",
+    "sigla": "EB/DSG",
     "url": "https://bdgex.eb.mil.br/mapcache3857",
     "wmsAvailable": true,
     "wfsAvailable": false,
@@ -109,6 +118,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA Algodão - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Algodão",
     "url": "http://geoinfo.cnpa.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -121,6 +131,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA Amazônia Oriental - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Amazônia Oriental",
     "url": "http://geoinfo.cpatu.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -133,6 +144,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA Caprinos e Ovinos - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Caprinos e Ovinos",
     "url": "http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -145,6 +157,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA Clima Temperado - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Clima Temperado",
     "url": "http://geoinfo.cpact.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -157,6 +170,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA Florestas - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Florestas",
     "url": "http://geoinfo.cnpf.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -169,6 +183,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA  Gado de Leite - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA  Gado de Leite",
     "url": "http://geoinfo.cnpgl.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -181,6 +196,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA  Informática Agropecuária - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA  Informática Agropecuária",
     "url": "http://geoinfo.cnptia.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -193,6 +209,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA Meio Ambiente - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Meio Ambiente",
     "url": "http://geoinfo.cnpma.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -204,7 +221,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "EMBRAPA Pecuária Sudeste  - Empresa Brasileira de Pesquisa Agropecuária ",
+    "descricao": "EMBRAPA Pecuária Sudeste - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Pecuária Sudeste",
     "url": "http://geoinfo.cppse.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -217,6 +235,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA Pecuária Sul – Empresa Brasileira de Pesquisa Agropecuária",
+    "sigla": "EMBRAPA Pecuária Sul",
     "url": "http://geoinfo.cppsul.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -228,7 +247,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "EMBRAPA Rondônia  - Empresa Brasileira de Pesquisa Agropecuária ",
+    "descricao": "EMBRAPA Rondônia - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Rondônia",
     "url": "http://atlas.geoinfo.cnpm.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -241,6 +261,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "EMBRAPA Solos - Empresa Brasileira de Pesquisa Agropecuária ",
+    "sigla": "EMBRAPA Solos",
     "url": "http://geoinfo.cnps.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -252,7 +273,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "EMBRAPA Tabuleiros Costeiros  - Empresa Brasileira de Pesquisa Agropecuária ",
+    "descricao": "EMBRAPA Tabuleiros Costeiros - Empresa Brasileira de Pesquisa Agropecuária",
+    "sigla": "EMBRAPA Tabuleiros Costeiros",
     "url": "http://geoinfo.cpatc.embrapa.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -264,7 +286,21 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
+        "descricao": "EMBRAPA Territorial - Empresa Brasileira de Pesquisa Agropecuária ",
+        "sigla": "EMBRAPA Territorial",
+        "url": "http://geoinfo.cnpm.embrapa.br/geoserver/ows",
+        "wmsAvailable": true,
+        "wfsAvailable": true,
+        "wcsAvailable": true,
+        "wmsGetCapabilities": "http://geoinfo.cnpm.embrapa.br/geoserver/ows?service=wms&request=GetCapabilities&version=1.3.0",
+        "wfsGetCapabilities": "http://geoinfo.cnpm.embrapa.br/geoserver/ows?service=wfs&request=GetCapabilities&version=1.3.0",
+        "wcsGetCapabilities": "http://geoinfo.cnpm.embrapa.br/geoserver/ows?service=wcs&request=GetCapabilities&version=1.3.0",
+        "url_metadados": "http://inde.geoinfo.cnpm.embrapa.br/",
+        "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+    },
+    {
     "descricao": "EPE - Empresa de Pesquisa Energética",
+    "sigla": "EPE",
     "url": "https://geoservicos.inde.gov.br/geoserver/EPE/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -272,23 +308,13 @@ export const catalogos_servicos = [
     "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/EPE/ows?service=wms&request=GetCapabilities&version=1.3.0",
     "wfsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/EPE/ows?service=wfs&request=GetCapabilities&version=1.3.0",
     "wcsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/EPE/ows?service=wcs&request=GetCapabilities&version=1.3.0",
-    "url_metadados": "http://inde.geoinfo.cnpm.embrapa.br/",
-    "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+    "url_metadados": "https://metadados.inde.gov.br/geonetwork/srv/por/q?category=EPE",
+    "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
-    {
-    "descricao": "EMBRAPA Territorial  - Empresa Brasileira de Pesquisa Agropecuária ",
-    "url": "http://geoinfo.cnpm.embrapa.br/geoserver/ows",
-    "wmsAvailable": true,
-    "wfsAvailable": true,
-    "wcsAvailable": true,
-    "wmsGetCapabilities": "http://geoinfo.cnpm.embrapa.br/geoserver/ows?service=wms&request=GetCapabilities&version=1.3.0",
-    "wfsGetCapabilities": "http://geoinfo.cnpm.embrapa.br/geoserver/ows?service=wfs&request=GetCapabilities&version=1.3.0",
-    "wcsGetCapabilities": "http://geoinfo.cnpm.embrapa.br/geoserver/ows?service=wcs&request=GetCapabilities&version=1.3.0",
-    "url_metadados": "http://inde.geoinfo.cnpm.embrapa.br/",
-    "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-    },
+    
     {
     "descricao": "IBAMA - Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis ",
+    "sigla": "IBAMA",
     "url": "http://siscom.ibama.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -301,6 +327,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "IBGE - Instituto Brasileiro de Geografia e Estatística ",
+    "sigla": "IBGE",
     "url": "https://geoservicos.ibge.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -313,6 +340,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "ICA - Instituto de Cartografia Aeronáutica ",
+    "sigla": "ICA",
     "url": "http://geoaisweb.decea.gov.br/geoserver/ICA/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -320,11 +348,25 @@ export const catalogos_servicos = [
     "wmsGetCapabilities": "http://geoaisweb.decea.gov.br/geoserver/ICA/ows?service=wms&request=GetCapabilities&version=1.3.0",
     "wfsGetCapabilities": "http://geoaisweb.decea.gov.br/geoserver/ICA/ows?service=wfs&request=GetCapabilities&version=1.3.0",
     "wcsGetCapabilities": "http://geoaisweb.decea.gov.br/geoserver/ICA/ows?service=wcs&request=GetCapabilities&version=1.3.0",
-    "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+    "url_metadados": "https://metadados.inde.gov.br/geonetwork/srv/por/q?category=ICA",
     "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "INPE - Instituto Nacional de Pesquisas Espaciais ",
+        "descricao": "ICMBIO - Instituto Chico Mendes de Conservação da Biodiversidade",
+        "sigla": "ICMBio",
+        "url": "https://geoservicos.inde.gov.br/geoserver/ICMBio/ows?",
+        "wmsAvailable": true,
+        "wfsAvailable": true,
+        "wcsAvailable": true,
+        "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/ICMBio/ows?service=wms&request=GetCapabilities&version=1.3.0",
+        "wfsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/ICMBio/ows?service=wfs&request=GetCapabilities&version=1.3.0",
+        "wcsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/ICMBio/ows?service=wcs&request=GetCapabilities&version=1.3.0",
+        "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+        "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+    },
+    {
+    "descricao": "INPE - Instituto Nacional de Pesquisas Espaciais",
+    "sigla": "INPE",
     "url": "http://terrabrasilis.dpi.inpe.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -336,7 +378,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "http://terrabrasilis.dpi.inpe.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "IPHAN - Instituto do Patrimônio Histórico e Artístico Nacional ",
+    "descricao": "IPHAN - Instituto do Patrimônio Histórico e Artístico Nacional",
+    "sigla": "IPHAN",
     "url": "http://portal.iphan.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -361,19 +404,20 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "MB/DHN - Diretoria de Hidrografia e Navegação",
-    "url": "https://geoservicos.inde.gov.br/geoserver/DHN/ows",
+    "url": "https://idem.dhn.mar.mil.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
     "wcsAvailable": false,
-    "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/DHN/ows?service=wms&request=GetCapabilities&version=1.3.0",
-    "wfsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/DHN/ows?service=wfs&request=GetCapabilities&version=1.3.0",
+    "wmsGetCapabilities": "https://idem.dhn.mar.mil.br/geoserver/ows?service=wms&request=GetCapabilities&version=1.3.0",
+    "wfsGetCapabilities": "https://idem.dhn.mar.mil.br/geoserver/ows?service=wfs&request=GetCapabilities&version=1.3.0",
     "wcsGetCapabilities": null,
-    "url_metadados": "https://metadados.inde.gov.br/geonetwork",
-    "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+    "url_metadados": "https://idem.dhn.mar.mil.br/geonetwork",
+    "cswGetCapabilities": "https://idem.dhn.mar.mil.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
     "descricao": "MB/DPC- Diretoria de Portos e Costas",
     "url": "https://geoservicos.inde.gov.br/geoserver/DPC/ows",
+    "sigla": "MB/DPC",
     "wmsAvailable": true,
     "wfsAvailable": true,
     "wcsAvailable": true,
@@ -384,19 +428,46 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "MB/PEM - Planejamento Espacial Marinho",
-    "url": "https://geoservicos.inde.gov.br/geoserver/PEM/ows",
+    "descricao": "MB/DPHDM - Diretoria do Patrimônio Histórico e Documentação da Marinha",
+    "sigla": "MB/DPHDM",
+    "url": "https://geoservicos.inde.gov.br/geoserver/DPHDM/ows",
     "wmsAvailable": true,
     "wfsAvailable": false,
     "wcsAvailable": false,
-    "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/PEM/ows?service=wms&request=GetCapabilities&version=1.3.0",
-    "wfsGetCapabilities": null,
-    "wcsGetCapabilities": null,
+    "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/DPHDM/ows?service=wms&request=GetCapabilities&version=1.3.0",
+    "wfsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/DPHDM/ows?service=wfs&request=GetCapabilities&version=1.3.0",
+    "wcsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/DPHDM/ows?service=wcs&request=GetCapabilities&version=1.3.0",
     "url_metadados": "https://metadados.inde.gov.br/geonetwork",
     "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "MDIC - Ministério do Desenvolvimento da Indústria e do Comércio ",
+        "descricao": "MB/PEM - Planejamento Espacial Marinho",
+        "url": "https://geoservicos.inde.gov.br/geoserver/PEM/ows",
+        "wmsAvailable": true,
+        "wfsAvailable": false,
+        "wcsAvailable": false,
+        "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/PEM/ows?service=wms&request=GetCapabilities&version=1.3.0",
+        "wfsGetCapabilities": null,
+        "wcsGetCapabilities": null,
+        "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+        "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+    },
+    {
+        "descricao": "MINFRA - Ministério da Infraestrutura",
+        "sigla": "MINFRA",
+        "url": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows",
+        "wmsAvailable": true,
+        "wfsAvailable": true,
+        "wcsAvailable": true,
+        "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows?service=wms&request=GetCapabilities&version=1.3.0",
+        "wfsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows?service=wfs&request=GetCapabilities&version=1.3.0",
+        "wcsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows?service=wcs&request=GetCapabilities&version=1.3.0",
+        "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+        "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+    },
+    {
+    "descricao": "MDIC - Ministério do Desenvolvimento da Indústria e do Comércio",
+    "sigla": "MDIC",    
     "url": "https://geoservicos.inde.gov.br/geoserver/MDIC/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -409,6 +480,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "MINFRA - Ministério da Infraestrutura",
+    "sigla": "MINFRA",
     "url": "https://geoservicos.inde.gov.br/geoserver/MInfra/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -421,6 +493,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "MP - Ministério de Planejamento, Desenvolvimento e Gestão ",
+    "sigla": "MP",
     "url": "https://geoservicos.inde.gov.br/geoserver/MPOG/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -432,7 +505,21 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
+        "descricao": "MTUR - Ministério do Turismo",
+        "sigla": "MTUR",
+        "url": "https://geoservicos.inde.gov.br/geoserver/MTU/ows",
+        "wmsAvailable": true,
+        "wfsAvailable": true,
+        "wcsAvailable": true,
+        "wmsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MTU/ows?service=wms&request=GetCapabilities&version=1.3.0",
+        "wfsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MTU/ows?service=wfs&request=GetCapabilities&version=1.3.0",
+        "wcsGetCapabilities": "https://geoservicos.inde.gov.br/geoserver/MTU/ows?service=wcs&request=GetCapabilities&version=1.3.0",
+        "url_metadados": "https://metadados.inde.gov.br/geonetwork",
+        "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+    },
+    {
     "descricao": "IBGE/ODS - Objetivos de Desenvolvimento Sustentável ",
+    "sigla": "IBGE/ODS",
     "url": "https://geoservicos.ibge.gov.br/geoserver/ODS/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -444,7 +531,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://metadadosgeo.ibge.gov.br/geonetwork_ibge/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "SFB - Serviço Florestal do Brasil ",
+    "descricao": "SFB - Serviço Florestal do Brasil",
+    "sigla": "SFB",
     "url": "http://sistemas.florestal.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -452,11 +540,12 @@ export const catalogos_servicos = [
     "wmsGetCapabilities": "http://sistemas.florestal.gov.br/geoserver/ows?service=wms&request=GetCapabilities&version=1.3.0",
     "wfsGetCapabilities": "http://sistemas.florestal.gov.br/geoserver/ows?service=wfs&request=GetCapabilities&version=1.3.0",
     "wcsGetCapabilities": "http://sistemas.florestal.gov.br/geoserver/ows?service=wcs&request=GetCapabilities&version=1.3.0",
-    "url_metadados": "https://metadadosgeo.ibge.gov.br/geonetwork_ibge",
-    "cswGetCapabilities": "https://metadadosgeo.ibge.gov.br/geonetwork_ibge/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+    "url_metadados": null,
+    "cswGetCapabilities": null
     },
     {
-    "descricao": "SPM - Secretaria Nacional de Políticas para as Mulheres ",
+    "descricao": "SPM - Secretaria Nacional de Políticas para as Mulheres",
+    "sigla": "SPM",
     "url": "https://geoservicos.inde.gov.br/geoserver/SPM/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -468,7 +557,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "CELEPAR/PR - Companhia de Tecnologia da Informação e Comunicação ",
+    "descricao": "CELEPAR/PR - Companhia de Tecnologia da Informação e Comunicação",
+    "sigla": "CELEPAR/PR",
     "url": "http://geoserver.pr.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -476,23 +566,25 @@ export const catalogos_servicos = [
     "wmsGetCapabilities": "http://geoserver.pr.gov.br/geoserver/ows?service=wms&request=GetCapabilities&version=1.3.0",
     "wfsGetCapabilities": "http://geoserver.pr.gov.br/geoserver/ows?service=wfs&request=GetCapabilities&version=1.3.0",
     "wcsGetCapabilities": "http://geoserver.pr.gov.br/geoserver/ows?service=wcs&request=GetCapabilities&version=1.3.0",
-    "url_metadados": "https://metadados.inde.gov.br/geonetwork",
-    "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
-    },
-    {
-    "descricao": "IDE/DF - Infraestrutura de Dados Espaciais do Distrito Federal",
-    "url": "https://www.geoservicos1.segeth.df.gov.br/arcgis/services/Geoportal/ide_df/MapServer/WMSServer",
-    "wmsAvailable": true,
-    "wfsAvailable": false,
-    "wcsAvailable": false,
-    "wmsGetCapabilities": "https://www.geoservicos1.segeth.df.gov.br/arcgis/services/Geoportal/ide_df/MapServer/WMSServer?service=wms&request=GetCapabilities&version=1.3.0",
-    "wfsGetCapabilities": null,
-    "wcsGetCapabilities": null,
     "url_metadados": null,
     "cswGetCapabilities": null
     },
     {
-    "descricao": "IDE/ES-GEOBASES - Sistema Integrado de Bases Geoespaciais do Estado do Espírito Santo ",
+    "descricao": "IDE/DF - Infraestrutura de Dados Espaciais do Distrito Federal",
+    "sigla": "IDE/DF",
+    "url": "https://www.geoservicos1.segeth.df.gov.br/arcgis/services/Geoportal/ide_df/MapServer/WMSServer",
+    "wmsAvailable": true,
+    "wfsAvailable": false,
+    "wcsAvailable": false,
+    "wmsGetCapabilities": "https://www.geoservicos.ide.df.gov.br/arcgis/services/Publico/IDEDF/MapServer/WmsServer?service=wms&version=1.3.0&request=GetCapabilities",
+    "wfsGetCapabilities": null,
+    "wcsGetCapabilities": null,
+    "url_metadados": "https://www.metadados.seduh.df.gov.br/geonetwork",
+    "cswGetCapabilities": "https://www.metadados.seduh.df.gov.br/geonetwork/catalogue/csw?service=CSW&request=GetCapabilities&version=2.0.2"
+    },
+    {
+    "descricao": "IDE/ES-GEOBASES - Sistema Integrado de Bases Geoespaciais do Estado do Espírito Santo",
+    "sigla": "IDE/ES-GEOBASES",
     "url": "https://ide.geobases.es.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -500,11 +592,12 @@ export const catalogos_servicos = [
     "wmsGetCapabilities": "https://ide.geobases.es.gov.br/geoserver/ows?service=wms&request=GetCapabilities&version=1.3.0",
     "wfsGetCapabilities": "https://ide.geobases.es.gov.br/geoserver/ows?service=wfs&request=GetCapabilities&version=1.3.0",
     "wcsGetCapabilities": "https://ide.geobases.es.gov.br/geoserver/ows?service=wcs&request=GetCapabilities&version=1.3.0",
-    "url_metadados": "https://ide.geobases.es.gov.br/",
+    "url_metadados": "https://ide.geobases.es.gov.br/catalogue/csw",
     "cswGetCapabilities": "https://ide.geobases.es.gov.br/catalogue/csw?service=CSW&request=GetCapabilities&version=2.0.2"
     },
     {
-    "descricao": "IDE/Sisema- Sistema Estadual de Meio Ambiente e Recursos Hídricos(MG)",
+    "descricao": "IDE/Sisema - Sistema Estadual de Meio Ambiente e Recursos Hídricos(MG)",
+    "sigla": "IDE/Sisema",
     "url": "https://geoserver.meioambiente.mg.gov.br/ows/",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -516,7 +609,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": null
     },
     {
-    "descricao": "IDEA/SP - Infraestrutura de Dados Espaciais Ambientais do Estado de São Paulo ",
+    "descricao": "IDEA/SP - Infraestrutura de Dados Espaciais Ambientais do Estado de São Paulo",
+    "sigla": "IDEA/SP",
     "url": "http://datageo.ambiente.sp.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -528,7 +622,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": null
     },
     {
-    "descricao": "IDE/SP - Infraestrutura de Dados Espaciais de São Paulo ",
+    "descricao": "IDE/SP - Infraestrutura de Dados Espaciais de São Paulo",
+    "sigla": "IDE/SP",
     "url": "https://ide.emplasa.sp.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -541,6 +636,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "IEDE/RS - Infraestrutura Estadual de Dados Espaciais do Rio Grande do Sul",
+    "sigla": "IEDE/RS",
     "url": "https://iede.rs.gov.br/server/services/INDE/IEDE_RS/MapServer/WMSServer",
     "wmsAvailable": true,
     "wfsAvailable": false,
@@ -552,7 +648,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://iede.rs.gov.br/geoportal/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "INEA/RJ - Instituto Estadual do Ambiente ",
+    "descricao": "INEA/RJ - Instituto Estadual do Ambiente",
+    "sigla": "INEA/RJ",
     "url": "https://geoservicos.inde.gov.br/geoserver/INEA/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -565,6 +662,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "PRODEMG - Companhia de Tecnologia da Informação do Estado de Minas Gerais",
+    "sigla": "PRODEMG",
     "url": "http://geoserver.prodemge.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -576,7 +674,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://www.geoservicos.prodemge.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "SEMACE/CE -Superintendência Estadual do Meio Ambiente do Ceará",
+    "descricao": "SEMACE/CE - Superintendência Estadual do Meio Ambiente do Ceará",
+    "sigla": "SEMACE/CE",
     "url": "https://geoservicos.inde.gov.br/geoserver/SEMACECE/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -588,7 +687,8 @@ export const catalogos_servicos = [
     "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
     },
     {
-    "descricao": "SEPLAG/AL - Secretaria de Estado do Planejamento, Gestão  e Patrimônio de Alagoas ",
+    "descricao": "SEPLAG/AL - Secretaria de Estado do Planejamento, Gestão  e Patrimônio de Alagoas",
+    "sigla": "SEPLAG/AL",
     "url": "http://geo.seplande.al.gov.br/teogc/terraogcwms.cgi",
     "wmsAvailable": true,
     "wfsAvailable": false,
@@ -601,6 +701,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "SEFAZ - Secretaria Municipal da Fazenda de Salvador",
+    "sigla": "SEFAZ",
     "url": "https://geoservicos.inde.gov.br/geoserver/BAPSalvador/ows",
     "wmsAvailable": true,
     "wfsAvailable": false,
@@ -613,6 +714,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "SEFIN - Secretaria Municipal das Finanças de Fortaleza",
+    "sigla": "SEFIN",
     "url": "https://geoserver.sefin.fortaleza.ce.gov.br/geoserver/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -625,6 +727,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "Prefeitura de Belo Horizonte (MG)",
+    "sigla": "PBH",
     "url": "http://bhmap.pbh.gov.br/v2/api/idebhgeo/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -637,6 +740,7 @@ export const catalogos_servicos = [
     },
     {
     "descricao": "Prefeitura de Juazeiro do Norte (CE)",
+    "sigla": "PJN",
     "url": "https://geoservicos.inde.gov.br/geoserver/CEPJuazeiroNorte/ows",
     "wmsAvailable": true,
     "wfsAvailable": true,
@@ -661,6 +765,7 @@ export const catalogos_servicos = [
     },
     {
         "descricao": "FMADS - Fundação Municipal do Meio Ambiente e Desenvolvimento Sustentável de São José / SC",
+        "sigla": "FMADS",
         "url": "https://geoservicos.inde.gov.br/geoserver/SCSJFMADS/ows",
         "wmsAvailable": true,
         "wfsAvailable": true,
@@ -672,6 +777,139 @@ export const catalogos_servicos = [
         "cswGetCapabilities": "https://metadados.inde.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
         }
     ]
-    export const catalogos_metadados = [
-        {"descricao": "Catalógo de metadados do Nó central da INDE",  url: 'https://metadados.inde.gov.br/geonetwork/srv/por/csw'}
+    export const catalogos_csw = [
+        {
+            "descricao": "Prefeitura de Belo Horizante",  
+            "sigla": "PrefeituraBH",
+            "url": "http://geonetwork.pbh.gov.br/geonetwork/",
+            "cswGetCapabilities": "http://geonetwork.pbh.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "SEPLAG/AL - Secretaria de Estado do Planejamento, Gestão e Patrimônio de Alagoas",  
+            "sigla": "SEPLAGAL",
+            "url": "http://inde.dados.al.gov.br:8080/geonetwork",
+            "cswGetCapabilities": "http://inde.dados.al.gov.br:8080/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "EMBRAPA - Empresa Brasileira de Pesquisa Agropecuária",  
+            "sigla": "EMBRAPA",
+            "url": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde",
+            "cswGetCapabilities": "http://inde.geoinfo.cnpm.embrapa.br/geonetwork_inde/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "MDA - Ministério do Desenvolvimento Agrário",  
+            "sigla": "MDA",
+            "url": "http://mapas.mda.gov.br/geonetwork",
+            "cswGetCapabilities": "http://mapas.mda.gov.br/geonetwork/srv/pt/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "MMA - Minstério do Meio Ambiente",  
+            "sigla": "MMA",
+            "url": "http://mapas.mma.gov.br/geonetwork",
+            "cswGetCapabilities": "http://mapas.mma.gov.br/geonetwork/srv/br/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "MS - Ministério da Saúde",  
+            "sigla": "MS",
+            "url": "http://mapas.sage.saude.gov.br/geonetwork",
+            "cswGetCapabilities": "http://mapas.sage.saude.gov.br/geonetwork/srv/br/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "CENSIPAM - Centro Gestor e Operacional do Sistema de Proteção da Amazônia",  
+            "sigla": "CENSIPAM",
+            "url": "http://panorama.sipam.gov.br/geonetwork/",
+            "cswGetCapabilities": "http://panorama.sipam.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "INPE - Instituto Nacional de Pesquisas Espaciais",  
+            "sigla": "INPE",
+            "url": "http://terrabrasilis.dpi.inpe.br/geonetwork/",
+            "cswGetCapabilities": "http://terrabrasilis.dpi.inpe.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "Infraestrutura de Dados Espaciais de São Paulo",  
+            "sigla": "IDESP",
+            "url": "http://www.metadados.idesp.sp.gov.br/",
+            "cswGetCapabilities": "http://www.metadados.idesp.sp.gov.br/catalogo/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "EB/DSG - Diretoria de Serviço Geográfico do Exército Brasileiro",  
+            "sigla": "EBDSG",
+            "url": "https://bdgex.eb.mil.br/bdgexapp",
+            "cswGetCapabilities": "https://bdgex.eb.mil.br/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "SEFIN - Secretaria Municipal das Finanças de Fortaleza",  
+            "sigla": "SEFIN",
+            "url": "https://geonetwork.sefin.fortaleza.ce.gov.br/geonetwork/",
+            "cswGetCapabilities": "https://geonetwork.sefin.fortaleza.ce.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "IDE/ES-GEOBASES - Sistema Integrado de Bases Geoespaciais do Estado do Espírito Santo",  
+            "sigla": "IDEES",
+            "url": "https://ide.geobases.es.gov.br/",
+            "cswGetCapabilities": "https://ide.geobases.es.gov.br/catalogue/csw?service=CSW&request=GetCapabilities&version=2.0.2"
+        },
+        {
+            "descricao": "MB/DHN - Diretoria de Hidrografia e Navegação da Marinha do Brasil",  
+            "sigla": "DHN",
+            "url": "https://idem.dhn.mar.mil.br/geonetwork",
+            "cswGetCapabilities": "https://idem.dhn.mar.mil.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "IEDE/RS - Infraestrutura Estadual de Dados Espaciais do Rio Grande do Sul",
+            "sigla": "IEDERS",
+            "url": "https://iede.rs.gov.br/geoportal",
+            "cswGetCapabilities": "https://iede.rs.gov.br/geoportal/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "CPRM -  Serviço Geológico do Brasil",
+            "sigla": "CPRM",
+            "url": "http://www.metadados.cprm.gov.br/geonetwork",
+            "cswGetCapabilities": "http://www.metadados.cprm.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "SEMA/DF - Secretaria de Estado do Meio Ambiente do Distrito Federal",
+            "sigla": "SEMADF",
+            "url": "https://metadados.sisdia.df.gov.br/geonetwork/",
+            "cswGetCapabilities": "https://metadados.sisdia.df.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "ANA - Agência Nacional de Águas e Saneamento Básico",
+            "sigla": "ANA",
+            "url": "https://metadados.snirh.gov.br/geonetwork",
+            "cswGetCapabilities": "https://metadados.snirh.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        
+        {
+            "descricao": "IBGE - Instituto Brasileiro de Geografia e Estatística ",
+            "sigla": "IBGE",
+            "url": "https://metadadosgeo.ibge.gov.br",
+            "cswGetCapabilities": "https://metadadosgeo.ibge.gov.br/geonetwork_ibge/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "IBAMA - Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis ",
+            "sigla": "IBAMA",
+            "url": "http://siscom.ibama.gov.br/geonetwork/",
+            "cswGetCapabilities": "http://siscom.ibama.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "ANATEL - Agência Nacional de Telecomunicações",
+            "sigla": "ANATEL",
+            "url": "https://sistemas.anatel.gov.br/geonetwork",
+            "cswGetCapabilities": "https://sistemas.anatel.gov.br/geonetwork/srv/eng/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        {
+            "descricao": "PRODEMG - Companhia de Tecnologia da Informação do Estado de Minas Gerais",
+            "sigla": "PRODEMG",
+            "url": "https://www.geoservicos.prodemge.gov.br/geonetwork",
+            "cswGetCapabilities": "https://www.geoservicos.prodemge.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        },
+        
+        {
+            "descricao": "IDE/DF - Infraestrutura de Dados Espaciais do Distrito Federal",
+            "sigla": "IDE/DF",
+            "url": "https://www.metadados.seduh.df.gov.br/geonetwork",
+            "cswGetCapabilities": "https://www.metadados.seduh.df.gov.br/geonetwork/srv/por/csw?service=CSW&version=2.0.2&request=GetCapabilities"
+        }
     ]

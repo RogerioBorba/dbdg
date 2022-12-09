@@ -453,14 +453,19 @@ export class WMSCapabilities {
     
     layerObjects() {
         const cl =   this.capabilityRequestParentLayer()
+        
         if (!cl)
             return null
         let lays =  cl['Layer']
-        
+        if (!lays)
+            return null
+        if (!Array.isArray(lays))
+            lays = lays['Layer']
         return lays
         
     }
      lenLayerObjects() {
+        
         const ls =  this.layerObjects()
         if (!ls)
             return 0

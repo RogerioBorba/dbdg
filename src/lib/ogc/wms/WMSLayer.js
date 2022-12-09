@@ -150,6 +150,9 @@ export class WMSLayer {
         return this.objCapability('Title')
     }
 
+    description() {
+        return this.title() || this.name() || 'sem título e nome'
+    }
     abstractLayer(){
         return this.objCapability('Abstract')
     }

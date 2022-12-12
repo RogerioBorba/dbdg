@@ -25,9 +25,10 @@ import { goto } from '$app/navigation';
     }
 
     function qtdCamada() {
-        console.log(wmsCapabilities.lenLayerObjects())
+        
         if (!wmsCapabilities)
             return 0
+        
         return wmsCapabilities.lenLayerObjects()
         
     }

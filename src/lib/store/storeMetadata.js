@@ -1,0 +1,3 @@
+import { writable } from 'svelte/store';
+export let countMetadata = writable(0)
+export let countProcessado = writable(0)
